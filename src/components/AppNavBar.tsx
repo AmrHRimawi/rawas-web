@@ -36,15 +36,28 @@ export default function AppNavBar() {
         },
     ]
 
+    const [isScrolled, setIsScrolled] = React.useState(false);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 200); // Adjust the threshold as needed
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <Navbar
             isBlurred={false}
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={setIsMenuOpen}
             maxWidth="full"
-            className={isMain ? "bg-opacity-0" : "bg-opacity-100"}
-            isBordered={!isMain}
-            
+            className={isMain && !isScrolled ? "bg-opacity-0" : "bg-opacity-100"}
+            isBordered={!isMain || isScrolled}
+
         >
             <NavbarContent className="lg:hidden" justify="start">
                 <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"}/>
@@ -69,7 +82,7 @@ export default function AppNavBar() {
                             <div className="w-4"/>
                             <Link
                                 className={"w-full "
-                                    + (isMain ? " text-primary-foreground" : " text-primary")
+                                    + (isMain && !isScrolled ? " text-primary-foreground" : " text-primary")
                                     + (isActive ? " border-b-2 border-secondary font-bold" : "")}
                                 href={item.link}
                                 size="lg"

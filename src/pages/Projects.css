@@ -1,0 +1,9 @@
+.projects-img {
+    background-image: url('/imgs/project-img.png');
+    background-position: center;
+    background-blend-mode: overlay;
+    background-size: cover;
+    height: 80vh;
+    /*width: 100%;*/
+    /*transform: translate(0px, -4rem);*/
+}

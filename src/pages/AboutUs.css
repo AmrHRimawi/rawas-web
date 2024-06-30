@@ -1,0 +1,8 @@
+.about-us-header-section {
+    background-image: url('/imgs/real-estate-web-banner.png');
+    background-position: center;
+    background-blend-mode: overlay;
+    height: 100vh;
+    width: 100%;
+    transform: translate(0px, -4rem);
+}
