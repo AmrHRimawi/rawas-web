@@ -11,7 +11,7 @@ export default function AppFooter() {
         <div>
             <div className="bg-primary-foreground p-5 translate-y-28 shadow-2xl border-t-2 rounded-full">
 
-                <Image width={200} height={200} src="/imgs/rawas-logo.svg" alt="Rawas"/>
+                <Image width={200} height={200} src="/rawas-web/imgs/rawas-logo.svg" alt="Rawas"/>
             </div>
         </div>
         <div className="w-full flex flex-col justify-center items-center h-3/4 bg-primary text-primary-foreground">

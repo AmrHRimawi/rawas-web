@@ -38,7 +38,7 @@ export default function AboutUs() {
 
                 <AppTitle2 className="" text="رسالة المؤسس"/>
                 <div>
-                    <Image width={607} height={607} src="/imgs/eng-imad.png" alt="iamd"/>
+                    <Image width={607} height={607} src="/rawas-web/imgs/eng-imad.png" alt="iamd"/>
 
                     <div className="h-80 sm:h-1"/>
                     <div className="relative flex justify-center items-center">
@@ -144,7 +144,7 @@ export default function AboutUs() {
 
                         </div>
                     </div>
-                    <div className="absolute -left-12 max-w-1/3"><Image className=" max-w-1/3" width={600} height={600} src="/imgs/rawas-logo.svg" alt="Rawas"/></div>
+                    <div className="absolute -left-12 max-w-1/3"><Image className=" max-w-1/3" width={600} height={600} src="/rawas-web/imgs/rawas-logo.svg" alt="Rawas"/></div>
                 </div>
 
             </div>
