@@ -1,9 +1,25 @@
 import React from "react";
 import IconText from "@/components/IconText";
 import Image from "next/image";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFacebook, faSquareInstagram} from "@fortawesome/free-brands-svg-icons";
+import {Link} from "@nextui-org/react";
 
 export default function AppFooter() {
 
+
+    const socials = [
+        {
+            name: "Facebook",
+            icon: <FontAwesomeIcon icon={faFacebook} size="xl"/>,
+            link: "https://www.facebook.com"
+        },
+        {
+            name: "Instagram",
+            icon: <FontAwesomeIcon icon={faSquareInstagram} size="xl"/>,
+            link: "https://www.facebook.com"
+        },
+    ];
 
     return (<div className="w-full flex flex-col justify-between items-center h-lvh">
         <div>
@@ -30,6 +46,15 @@ export default function AppFooter() {
                     <IconText icon="faPhone" iconProps={{className: "text-secondary text-2xl"}}>022422766</IconText>
                 </div>
                 <div><p className="text-3xl">أوقات الدوام من السبت - الخميس</p></div>
+
+            </div>
+
+            <div className="flex justify-end text-secondary w-11/12 border-t-1">
+                {
+                    socials.map(social => (
+                        <Link className="ps-5 py-2 text-xl text-secondary" key={social.name} href={social.link}>{social.icon}</Link>
+                    ))
+                }
             </div>
         </div>
     </div>);

@@ -34,7 +34,7 @@ export default function AppNavBar() {
             icon: <FontAwesomeIcon icon={faSquareInstagram} size="xl"/>,
             link: "https://www.facebook.com"
         },
-    ]
+    ];
 
     const [isScrolled, setIsScrolled] = React.useState(false);
 

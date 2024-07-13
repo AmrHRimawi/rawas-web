@@ -4,7 +4,7 @@ import React from "react";
 import {motion} from "framer-motion"
 
 const ArrowDown: React.FC<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>> = ({className, ...props}) => (
-    <div className={className + " h-28 w-16"}>
+    <div className={className + " h-28 w-16"} {...props}>
         <motion.svg initial={{opacity: 0, y: -10}}
                     animate={{opacity: 1, y: 0}}
                     exit={{opacity: 0, y: -10}}

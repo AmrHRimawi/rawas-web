@@ -42,7 +42,7 @@ export default function AboutUs() {
 
                     <div className="h-80 sm:h-1"/>
                     <div className="relative flex justify-center items-center">
-                        <div className="absolute z-0 w-full lg:w-9/12 h-80 border-8 rounded-2xl border-secondary shadow-xl"></div>
+                        <div className="absolute z-0 w-full lg:w-9/12 h-96 border-8 rounded-2xl border-secondary shadow-xl"></div>
 
                         <div
                             className="absolute z-10 w-11/12 lg:w-8/12 min-h-72 border-1 rounded-2xl border-secondary bg-primary-foreground shadow-2xl px-2 lg:px-8 py-12 lg:py-16">

@@ -66,12 +66,16 @@ export default function ContactUs() {
                     <Button className="mt-5 p-6 w-full text-xl" color="primary">إرسال</Button>
                     <div className="h-8"/>
                     <p>أو يمكنك التواصل معنا عبر منصاتنا الاجتماعية</p>
-                    <div className="flex flex-wrap border-b-2 border-primary mt-3">
+                    <div className="flex flex-wrap  mt-8">
                         {socialsContact.map(social => (
-                            <Link key={social.name} className="px-8 pb-4 text-secondary" href={social.link}>{social.icon}</Link>
+                            <Link key={social.name} className="text-2xl px-8 pb-4 text-secondary" href={social.link}>{social.icon}</Link>
                         ))}
                     </div>
                 </div>
+            </div>
+
+            <div className="h-12 w-full flex justify-center items-center">
+                <div className="h-1 w-2/3 border-b-1 shadow-xl"/>
             </div>
         </div>
     )

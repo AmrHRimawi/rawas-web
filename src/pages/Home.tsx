@@ -4,6 +4,7 @@ import "./Home.css";
 import React from "react";
 import ContactUs from "@/pages/ContactUs";
 import Projects from "@/pages/Projects";
+import ArrowDown from "@/components/ArrowDown";
 
 export default function Home() {
 
@@ -19,7 +20,10 @@ export default function Home() {
                 <h1 className=" text-white text-5xl md:text-7xl lg:text-9xl font-bold m-1  drop-shadow-xl">رواس</h1>
                 <h3 className="text-white text-4xl md:text-6xl lg:text-8xl m-1 drop-shadow-xl">أينما حلت حياه</h3>
             </div>
-            <div/>
+            <div className="w-full h-12 flex justify-center text-background drop-shadow-2xl">
+                <ArrowDown/>
+                <ArrowDown/>
+            </div>
         </div>
 
         <div className="w-full flex flex-col justify-center items-center">

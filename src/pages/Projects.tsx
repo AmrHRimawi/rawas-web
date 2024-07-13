@@ -12,8 +12,8 @@ export default function Projects() {
             <div className="flex flex-col lg:flex-row border-1 bg-foreground-50">
                 <div className="projects-img w-full">
                     <div className="absolute translate-y-12">
-                        <p className="bg-primary text-primary-foreground p-3 text-3xl w-fit ">مشروع رواس</p>
-                        <p className="bg-secondary text-secondary-foreground text-2xl p-3 pe-6 me-4">رام الله - عين مصباح - مقابل برج الاذاعة</p>
+                        <p className="bg-primary text-primary-foreground p-3 text-2xl lg:text-3xl w-fit ">مشروع رواس</p>
+                        <p className="bg-secondary text-secondary-foreground text-xl lg:text-2xl p-3 pe-6 lg:me-4">رام الله - عين مصباح - مقابل برج الاذاعة</p>
                     </div>
                 </div>
                 <div className="flex flex-col justify-evenly items-start p-12 text-2xl">

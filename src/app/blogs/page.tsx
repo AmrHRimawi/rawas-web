@@ -1,5 +1,5 @@
-import ComingSoon from "@/components/ComingSoon";
+import NoData from "@/components/NoData";
 
 export default function BlogsPage() {
-    return <ComingSoon/>;
+    return <NoData/>;
 }

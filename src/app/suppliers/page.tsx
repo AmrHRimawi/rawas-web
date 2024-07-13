@@ -1,5 +1,9 @@
-import ComingSoon from "@/components/ComingSoon";
+import Suppliers from "@/pages/Suppliers";
 
 export default function App() {
-    return <ComingSoon/>;
+    return (
+        <div className="w-full flex flex-col justify-center items-center">
+            <Suppliers/>
+        </div>
+    );
 }
