@@ -13,7 +13,7 @@ export default function AppNavBar() {
     const isMain = (path === "/");
 
     const menuItems = [
-        {name: "الرئيسية", link: "/"},
+        {name: "الرئيسية", link: ""},
         {name: "عن رواس", link: "about-us"},
         {name: "مشاريعنا", link: "projects"},
         {name: "مستشاري رواس", link: "consultants"},
