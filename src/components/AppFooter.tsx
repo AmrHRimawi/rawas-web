@@ -1,25 +1,11 @@
 import React from "react";
 import IconText from "@/components/IconText";
 import Image from "next/image";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faSquareInstagram} from "@fortawesome/free-brands-svg-icons";
 import {Link} from "@nextui-org/react";
+import {socials} from "@/utils/Constent";
 
 export default function AppFooter() {
 
-
-    const socials = [
-        {
-            name: "Facebook",
-            icon: <FontAwesomeIcon icon={faFacebook} size="xl"/>,
-            link: "https://www.facebook.com"
-        },
-        {
-            name: "Instagram",
-            icon: <FontAwesomeIcon icon={faSquareInstagram} size="xl"/>,
-            link: "https://www.facebook.com"
-        },
-    ];
 
     return (<div className="w-full flex flex-col justify-between items-center h-lvh">
         <div>

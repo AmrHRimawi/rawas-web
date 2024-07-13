@@ -4,8 +4,7 @@ import React from "react";
 import {Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle} from "@nextui-org/react";
 import {AppLogo} from "@/components/AppLogo";
 import {usePathname} from "next/navigation";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faFacebook, faSquareInstagram} from "@fortawesome/free-brands-svg-icons";
+import {socials} from "@/utils/Constent";
 
 export default function AppNavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -23,18 +22,6 @@ export default function AppNavBar() {
         {name: "تواصل معنا", link: "contact-us"},
     ];
 
-    const socials = [
-        {
-            name: "Facebook",
-            icon: <FontAwesomeIcon icon={faFacebook} size="xl"/>,
-            link: "https://www.facebook.com"
-        },
-        {
-            name: "Instagram",
-            icon: <FontAwesomeIcon icon={faSquareInstagram} size="xl"/>,
-            link: "https://www.facebook.com"
-        },
-    ];
 
     const [isScrolled, setIsScrolled] = React.useState(false);
 
