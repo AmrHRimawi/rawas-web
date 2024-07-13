@@ -10,6 +10,7 @@ export default function AppNavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const path = usePathname() ?? "";
+    console.log("== path: ", path)
     const isMain = (path === "/rawas-web/");
 
     const menuItems = [
@@ -109,7 +110,7 @@ export default function AppNavBar() {
                         </NavbarMenuItem>
                     );
                 })}
-                <NavbarMenuItem className="flex flex-wrap justify-center border-t-2 border-foreground mt-3">
+                <NavbarMenuItem className="flex flex-wrap justify-center border-t-2 border-foreground-200 mt-3">
                     {
                         socials.map(social => (
                             <Link className="p-5" key={social.name} href={social.link}>{social.icon}</Link>
