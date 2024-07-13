@@ -20,6 +20,6 @@ export const socials = [
     {
         name: "Telegram",
         icon: <FontAwesomeIcon icon={faSquareWhatsapp} size="xl"/>,
-        link: "https://t.me/rawasplus"
+        link: "https://whatsapp.com/channel/0029VaZdaOx7j6fzk3ZH1x0q"
     },
 ];
