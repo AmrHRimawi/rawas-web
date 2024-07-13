@@ -10,10 +10,10 @@ export default function AppNavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const path = usePathname() ?? "";
-    const isMain = (path === "/");
+    const isMain = (path === "/rawas-web/");
 
     const menuItems = [
-        {name: "الرئيسية", link: ""},
+        {name: "الرئيسية", link: "/rawas-web/"},
         {name: "عن رواس", link: "about-us"},
         {name: "مشاريعنا", link: "projects"},
         {name: "مستشاري رواس", link: "consultants"},
@@ -52,7 +52,7 @@ export default function AppNavBar() {
 
             <NavbarContent className="lg:hidden pr-3" justify="center">
                 <NavbarBrand>
-                    <AppLogo/>
+                    <Link href={menuItems[0].link}><AppLogo/></Link>
                 </NavbarBrand>
             </NavbarContent>
 
@@ -109,7 +109,7 @@ export default function AppNavBar() {
                         </NavbarMenuItem>
                     );
                 })}
-                <NavbarMenuItem className="flex flex-wrap border-t-2 border-secondary mt-3">
+                <NavbarMenuItem className="flex flex-wrap justify-center border-t-2 border-foreground mt-3">
                     {
                         socials.map(social => (
                             <Link className="p-5" key={social.name} href={social.link}>{social.icon}</Link>

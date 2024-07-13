@@ -68,7 +68,7 @@ export default function ContactUs() {
                     <p>أو يمكنك التواصل معنا عبر منصاتنا الاجتماعية</p>
                     <div className="flex flex-wrap  mt-8">
                         {socialsContact.map(social => (
-                            <Link key={social.name} className="text-2xl px-8 pb-4 text-secondary" href={social.link}>{social.icon}</Link>
+                            <Link key={social.name} className="text-2xl px-4 lg:px-8 pb-4 text-secondary" href={social.link}>{social.icon}</Link>
                         ))}
                     </div>
                 </div>

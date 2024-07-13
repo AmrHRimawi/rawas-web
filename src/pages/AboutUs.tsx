@@ -97,11 +97,12 @@ export default function AboutUs() {
                 <div className="h-12"/>
 
 
-                <div className="relative flex justify-start items-center  ">
-                    <div className="border-secondary border-y-8 border-s-8 rounded-2xl p-8 w-10/12">
-
+                <div className="h-40"/>
+                <div className="relative flex flex-col lg:justify-start items-center  ">
+                    <div className="border-secondary border-x-8 border-b-8 lg:border-y-8 lg:border-s-8 rounded-2xl p-8 w-10/12">
+                        <div className="h-32"/>
                         <AppTitle2 className="" text="رسالة رواس"/>
-                        <div className="w-2/3">
+                        <div className="w-full lg:w-2/3">
                             <p>
                                 نرى ان افضل رسالة تقدمها رواس من خلال مشاريعها على الارض والتي تصبح حياه للمواقع التي ترغب رواس بانشاء مشاريعها فيها ومن هنا جاءت رواس ...
                             </p>

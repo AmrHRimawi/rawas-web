@@ -7,7 +7,7 @@ export default function Consultants() {
     return (
         <div className="w-5/6">
             <div className="h-16"/>
-            <AppTitle text="ستشارينا" prefix="م"/>
+            <AppTitle text="ـستشارينا" prefix="مـ"/>
             <br/>
             <div className="flex flex-col justify-center items-center">
                 <NoData/>

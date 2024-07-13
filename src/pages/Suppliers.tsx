@@ -7,7 +7,7 @@ export default function Suppliers() {
     return (
         <div className="w-5/6">
             <div className="h-16"/>
-            <AppTitle text="وردينا" prefix="م"/>
+            <AppTitle text="ـوردينا" prefix="مـ"/>
             <br/>
             <div className="flex flex-col justify-center items-center">
                 <NoData/>
