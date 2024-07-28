@@ -1,15 +1,16 @@
 import React from "react";
 import "./Projects.css"
 import AppTitle from "@/components/AppTitle";
+import MotionDiv from "@/components/MotionDiv";
 
 export default function Projects() {
     return (
         <div className="w-5/6">
             <div className="h-24"/>
-            <AppTitle text="ـشاريعنا" prefix="مـ"/>
+            <MotionDiv><AppTitle text="ـشاريعنا" prefix="مـ"/></MotionDiv>
             <div className="h-24"/>
 
-            <div className="flex flex-col lg:flex-row border-1 bg-foreground-50">
+            <MotionDiv className="flex flex-col lg:flex-row border-1 bg-foreground-50">
                 <div className="projects-img w-full">
                     <div className="absolute translate-y-12">
                         <p className="bg-primary text-primary-foreground p-3 text-2xl lg:text-3xl w-fit ">مشروع رواس</p>
@@ -30,7 +31,7 @@ export default function Projects() {
                     <p>مقسم الى 25 مكتب مع امكانية الدمج</p>
                     <p>مساحات متنوعة</p>
                 </div>
-            </div>
+            </MotionDiv>
             <div className="h-24"/>
 
         </div>

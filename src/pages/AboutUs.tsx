@@ -99,8 +99,8 @@ export default function AboutUs() {
 
                 <div className="h-40"/>
                 <div className="relative flex flex-col lg:justify-start items-center  ">
-                    <div className="border-secondary border-x-8 border-b-8 lg:border-y-8 lg:border-s-8 rounded-2xl p-8 w-10/12">
-                        <div className="h-32"/>
+                    <div className="border-secondary border-x-8 border-b-8 lg:border-y-8 lg:border-s-8 lg:border-e-0 rounded-2xl p-8 w-10/12">
+                        <div className="h-32 lg:h-0"/>
                         <AppTitle2 className="" text="رسالة رواس"/>
                         <div className="w-full lg:w-2/3">
                             <p>
@@ -145,7 +145,9 @@ export default function AboutUs() {
 
                         </div>
                     </div>
-                    <div className="absolute -left-12 max-w-1/3"><Image className=" max-w-1/3" width={600} height={600} src="/rawas-web/imgs/rawas-logo.svg" alt="Rawas"/></div>
+                    <div className="absolute -top-32  lg:-left-12 max-w-1/3">
+                        <Image className=" max-w-1/3" width={600} height={600} src="/rawas-web/imgs/rawas-logo.svg" alt="Rawas"/>
+                    </div>
                 </div>
 
             </div>

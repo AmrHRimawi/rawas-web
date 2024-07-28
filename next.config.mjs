@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: "export",
-    // basePath: "/rawas-web",
+    basePath: "/rawas-web",
     images: {
         unoptimized: true,
     }

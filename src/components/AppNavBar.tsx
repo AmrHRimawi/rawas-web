@@ -11,7 +11,7 @@ export default function AppNavBar() {
 
     const path = usePathname() ?? "";
     console.log("== path: ", path)
-    const isMain = (path === "/rawas-web/");
+    const isMain = (path === "/");
 
     const menuItems = [
         {name: "الرئيسية", link: "/rawas-web/"},
@@ -19,7 +19,7 @@ export default function AppNavBar() {
         {name: "مشاريعنا", link: "projects"},
         {name: "مستشاري رواس", link: "consultants"},
         {name: "موردي رواس", link: "suppliers"},
-        {name: "مقالات", link: "blogs"},
+        {name: "مقالات وأخبار", link: "blogs"},
         {name: "تواصل معنا", link: "contact-us"},
     ];
 
@@ -27,15 +27,21 @@ export default function AppNavBar() {
     const [isScrolled, setIsScrolled] = React.useState(false);
 
     React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 200); // Adjust the threshold as needed
-        };
+        console.log("== isMain: ", isMain)
+        if (isMain) {
+            const handleScroll = () => {
+                setIsScrolled(window.scrollY > 200); // Adjust the threshold as needed
+            };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+            window.addEventListener('scroll', handleScroll);
+            console.log("== added event listener")
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+                console.log("== removed event listener")
+            };
+        }
+    }, [isMain]);
+
 
     return (
         <Navbar
@@ -86,7 +92,7 @@ export default function AppNavBar() {
 
             <NavbarContent justify="end">
                 {
-                    socials.map(social => (
+                    socials(!isMain || isScrolled).map(social => (
                         <NavbarItem key={social.name} className="hidden lg:flex">
                             <Link href={social.link}>{social.icon}</Link>
                         </NavbarItem>
@@ -112,7 +118,7 @@ export default function AppNavBar() {
                 })}
                 <NavbarMenuItem className="flex flex-wrap justify-center border-t-2 border-foreground-200 mt-3">
                     {
-                        socials.map(social => (
+                        socials().map(social => (
                             <Link className="p-5" key={social.name} href={social.link}>{social.icon}</Link>
                         ))
                     }

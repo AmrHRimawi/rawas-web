@@ -1,8 +1,24 @@
 .about-us-header-section {
-    background-image: url('/rawas-web/imgs/real-estate-web-banner.png');
+    background-image: url('/rawas-web/imgs/real-estate-web-banner.jpg');
     background-position: center;
     background-blend-mode: overlay;
     height: 100vh;
     width: 100%;
     transform: translate(0px, -4rem);
+}
+
+.about-us-header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Black filter with 20% opacity */
+    z-index: 1;
+}
+
+.about-us-header-section > * {
+    position: relative;
+    z-index: 2;
 }
