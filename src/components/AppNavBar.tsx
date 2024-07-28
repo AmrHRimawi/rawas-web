@@ -11,7 +11,7 @@ export default function AppNavBar() {
 
     const path = usePathname() ?? "";
     console.log("== path: '", path, "'");
-    const isMain = (path === " /");
+    const isMain = (path === " / ");
 
     const menuItems = [
         {name: "الرئيسية", link: "/rawas-web/"},
