@@ -10,8 +10,8 @@ export default function AppNavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const path = usePathname() ?? "";
-    console.log("== path: ", path)
-    const isMain = (path === "/");
+    console.log("== path: '", path, "'");
+    const isMain = (path === " /");
 
     const menuItems = [
         {name: "الرئيسية", link: "/rawas-web/"},
