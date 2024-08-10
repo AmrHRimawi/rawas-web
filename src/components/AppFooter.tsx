@@ -4,6 +4,8 @@ import Image from "next/image";
 import {Link} from "@nextui-org/react";
 import {socials} from "@/utils/Constent";
 import MotionDiv from "@/components/MotionDiv";
+import OpeningTimes from "@/components/OpeningTimes";
+import PositionMap from "@/components/PositionMap";
 
 export default function AppFooter() {
 
@@ -12,7 +14,7 @@ export default function AppFooter() {
         <MotionDiv>
             <div className="bg-primary-foreground p-5 translate-y-28 shadow-2xl border-t-2 rounded-full">
 
-                <Image width={200} height={200} src="/rawas-web/imgs/rawas-logo.svg" alt="Rawas"/>
+                <Image width={200} height={200} src="/imgs/rawas-logo.svg" alt="Rawas"/>
             </div>
         </MotionDiv>
         <div className="w-full flex flex-col justify-center items-center h-3/4 bg-primary text-primary-foreground">
@@ -24,15 +26,20 @@ export default function AppFooter() {
                 </p></MotionDiv>
                 <MotionDiv>
                     <IconText icon="faMapLocationDot" iconProps={{className: "text-secondary text-2xl"}}>
-                        رام الله - عين مصباح - مقابل برج الاذاعة
+                        رام الله - حي الكرمل - مقابل برج الاذاعة
                     </IconText>
                 </MotionDiv>
-                <MotionDiv className="w-4/5 text-3xl flex flex-col lg:flex-row justify-between items-center">
-                    <IconText icon="faMobileScreen" iconProps={{className: "text-secondary  text-2xl"}}>0593330060</IconText>
-                    <IconText icon="faMobileScreen" iconProps={{className: "text-secondary text-2xl"}}>0593330066</IconText>
-                    <IconText icon="faPhone" iconProps={{className: "text-secondary text-2xl"}}>022422766</IconText>
+                {/*<MotionDiv><p className="text-3xl">أوقات الدوام من السبت - الخميس</p></MotionDiv>*/}
+                <div className="flex lg:flex-row ">
+                    <OpeningTimes/>
+                    <div className="w-2 h-2"/>
+                    <PositionMap position={{lat: 35.20234626960398, lng: 31.91206313678822}} label="Rawas Gate"/>
+                </div>
+                <MotionDiv className="w-4/5 text-2xl flex flex-col lg:flex-row justify-between items-center">
+                    <IconText icon="faMobileScreen" iconProps={{className: "text-secondary  text-xl"}}>0593330060</IconText>
+                    <IconText icon="faMobileScreen" iconProps={{className: "text-secondary text-xl"}}>0593330066</IconText>
+                    <IconText icon="faPhone" iconProps={{className: "text-secondary text-xl"}}>022422766</IconText>
                 </MotionDiv>
-                <MotionDiv><p className="text-3xl">أوقات الدوام من السبت - الخميس</p></MotionDiv>
 
             </div>
 

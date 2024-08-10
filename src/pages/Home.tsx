@@ -1,4 +1,4 @@
-import {Button} from "@nextui-org/react";
+import {Button, Link} from "@nextui-org/react";
 import {CalendarBoldIcon} from "@nextui-org/shared-icons";
 import "./Home.css";
 import React from "react";
@@ -30,6 +30,10 @@ export default function Home() {
         <div className="w-full flex flex-col justify-center items-center">
 
             <Projects/>
+
+            <Button href="/projects" as={Link} className="mt-5 p-6 w-1/4 text-xl" color="primary">
+                لمشاهدة المزيد
+            </Button>
 
             <ContactUs/>
         </div>

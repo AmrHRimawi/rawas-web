@@ -14,13 +14,13 @@ export default function AppNavBar() {
     const isMain = (path === "/");
 
     const menuItems = [
-        {name: "الرئيسية", link: "/rawas-web/"},
-        {name: "عن رواس", link: "about-us"},
-        {name: "مشاريعنا", link: "projects"},
-        {name: "مستشاري رواس", link: "consultants"},
-        {name: "موردي رواس", link: "suppliers"},
-        {name: "مقالات وأخبار", link: "blogs"},
-        {name: "تواصل معنا", link: "contact-us"},
+        {name: "الرئيسية", link: "/"},
+        {name: "عن رواس", link: "/about-us"},
+        {name: "مشاريعنا", link: "/projects"},
+        {name: "مستشاري رواس", link: "/consultants"},
+        {name: "موردي رواس", link: "/suppliers"},
+        {name: "مقالات وأخبار", link: "/blogs"},
+        {name: "تواصل معنا", link: "/contact-us"},
     ];
 
 
@@ -70,7 +70,8 @@ export default function AppNavBar() {
 
 
                 {menuItems.map((item, index) => {
-                    const isActive = (path === "/" && item.link === "/rawas-web/") || path.startsWith("/" + item.link);
+                    const isActive = (path === "/" && item.link === "/") || (item.link !== "/" && path.startsWith(item.link));
+                    console.log("== link", item.link, "isActive: ", (path === "/" && item.link === "/"), (item.link !== "/" && path.startsWith(item.link)))
                     return (
                         <NavbarItem key={`${item.name}-${index}`} className="flex">
                             <div className="w-4"/>
@@ -102,7 +103,7 @@ export default function AppNavBar() {
 
             <NavbarMenu>
                 {menuItems.map((item, index) => {
-                    const isActive = (path === "/" && item.link === "/rawas-web/") || path.startsWith("/" + item.link);
+                    const isActive = (path === "/" && item.link === "/") || (item.link !== "/" && path.startsWith(item.link));
                     return (
                         <NavbarMenuItem key={`${item.name}-${index}`}>
                             <Link
