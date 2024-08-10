@@ -6,16 +6,17 @@ import {motion, MotionProps} from "framer-motion";
 interface MotionDivProps extends MotionProps {
     children: React.ReactNode;
     className?: string;
+    viewportAmount?: number;
 }
 
-const MotionDiv: React.FC<MotionDivProps> = ({children, className, ...props}) => {
+const MotionUpDiv: React.FC<MotionDivProps> = ({children, className = "w-full", viewportAmount = 0.8, ...props}) => {
     const motionProps: MotionProps = {...props};
 
     return (
         <motion.div
             initial={{opacity: 0, y: 50}}
             whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true, amount: 0.2}}
+            viewport={{amount: viewportAmount}}
             transition={{duration: 0.5}}
             className={className}
             {...motionProps}
@@ -25,4 +26,4 @@ const MotionDiv: React.FC<MotionDivProps> = ({children, className, ...props}) =>
     );
 }
 
-export default MotionDiv;
+export default MotionUpDiv;

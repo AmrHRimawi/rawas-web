@@ -4,7 +4,7 @@ import React from "react";
 import {Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle} from "@nextui-org/react";
 import {AppLogo} from "@/components/AppLogo";
 import {usePathname} from "next/navigation";
-import {socials} from "@/utils/Constent";
+import {navLinks, socials} from "@/utils/Constent";
 
 export default function AppNavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -12,16 +12,6 @@ export default function AppNavBar() {
     const path = usePathname() ?? "";
     console.log("== path: '", path, "'");
     const isMain = (path === "/");
-
-    const menuItems = [
-        {name: "الرئيسية", link: "/"},
-        {name: "عن رواس", link: "/about-us"},
-        {name: "مشاريعنا", link: "/projects"},
-        {name: "مستشاري رواس", link: "/consultants"},
-        {name: "موردي رواس", link: "/suppliers"},
-        {name: "مقالات وأخبار", link: "/blogs"},
-        {name: "تواصل معنا", link: "/contact-us"},
-    ];
 
 
     const [isScrolled, setIsScrolled] = React.useState(false);
@@ -59,7 +49,7 @@ export default function AppNavBar() {
 
             <NavbarContent className="lg:hidden pr-3" justify="center">
                 <NavbarBrand>
-                    <Link href={menuItems[0].link}><AppLogo/></Link>
+                    <Link href={navLinks[0].link}><AppLogo/></Link>
                 </NavbarBrand>
             </NavbarContent>
 
@@ -69,7 +59,7 @@ export default function AppNavBar() {
                 </NavbarBrand>
 
 
-                {menuItems.map((item, index) => {
+                {navLinks.map((item, index) => {
                     const isActive = (path === "/" && item.link === "/") || (item.link !== "/" && path.startsWith(item.link));
                     console.log("== link", item.link, "isActive: ", (path === "/" && item.link === "/"), (item.link !== "/" && path.startsWith(item.link)))
                     return (
@@ -102,7 +92,7 @@ export default function AppNavBar() {
             </NavbarContent>
 
             <NavbarMenu>
-                {menuItems.map((item, index) => {
+                {navLinks.map((item, index) => {
                     const isActive = (path === "/" && item.link === "/") || (item.link !== "/" && path.startsWith(item.link));
                     return (
                         <NavbarMenuItem key={`${item.name}-${index}`}>

@@ -2,6 +2,16 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faSquareInstagram, faSquareWhatsapp, faSquareYoutube, faTelegram} from "@fortawesome/free-brands-svg-icons";
 import {ColorScale} from "@nextui-org/react";
 
+export const navLinks = [
+    {name: "الرئيسية", link: "/"},
+    {name: "عن رواس", link: "/about-us"},
+    {name: "مشاريعنا", link: "/projects"},
+    {name: "مستشاري رواس", link: "/consultants"},
+    {name: "موردي رواس", link: "/suppliers"},
+    {name: "مقالات وأخبار", link: "/blogs"},
+    {name: "تواصل معنا", link: "/contact-us"},
+];
+
 export const socials = (isColored: boolean = false) => {
     return [
         {

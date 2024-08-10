@@ -18,7 +18,7 @@ const ArrowDown: React.FC<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivEl
                     strokeLinejoin="round"
 
         >
-            <path d="M12 5v14M5 12l7 7 7-7"/>
+            <path d="M12 5M5 12l7 7 7-7"/>
         </motion.svg>
     </div>
 );

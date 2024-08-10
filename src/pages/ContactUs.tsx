@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Button, Input, Link, Textarea} from "@nextui-org/react";
 import IconText from "@/components/IconText";
 import {faFacebookMessenger, faLinkedin, faSquareInstagram, faSquareWhatsapp} from "@fortawesome/free-brands-svg-icons";
-import MotionDiv from "@/components/MotionDiv";
+import MotionUpDiv from "@/components/MotionUpDiv";
 
 export default function ContactUs() {
 
@@ -36,10 +36,10 @@ export default function ContactUs() {
 
         <div className="w-5/6">
             <div className="h-24"/>
-            <MotionDiv><AppTitle text="اصل معنا" prefix="تو"/></MotionDiv>
+            <MotionUpDiv><AppTitle text="اصل معنا" prefix="تو"/></MotionUpDiv>
             <br/>
             <div className="flex flex-col justify-center items-center">
-                <MotionDiv className="lg:w-8/12 max-w-6xl pt-4 pb-2 px-3 text-2xl flex flex-col lg:flex-row justify-evenly items-center bg-foreground-100 shadow-lg rounded-lg">
+                <MotionUpDiv className="lg:w-8/12 w-fit pt-4 pb-2 px-3 text-2xl flex flex-col lg:flex-row justify-evenly items-center bg-foreground-100 shadow-lg rounded-lg">
                     <Link href="tel:0593330060" className="text-2xl text-foreground">
                         <IconText icon="faMobileScreen" iconProps={{className: "text-secondary  text-2xl"}}>0593330060</IconText>
                     </Link>
@@ -49,25 +49,40 @@ export default function ContactUs() {
                     <Link href="tel:022422766" className="text-2xl text-foreground">
                         <IconText icon="faPhone" iconProps={{className: "text-secondary text-2xl"}}>022422766</IconText>
                     </Link>
-                </MotionDiv>
+                </MotionUpDiv>
 
-                <MotionDiv className="flex flex-col justify-center items-center text-center">
+                <MotionUpDiv className="flex flex-col justify-center items-center text-center">
                     <div className="h-8"/>
                     <p>نسعى لتقديم تجربة مميزة وجديدة في قطاع العقار الفلسطيني</p>
                     <div className="h-4"/>
                     <p>ادخل بياناتك هنا ليتم التواصل معك بأقرب وقت</p>
-                </MotionDiv>
-                <MotionDiv className="lg:w-1/2 max-w-xl flex flex-col items-center">
-                    <Input type="text" className="mt-5" label="الاسم"/>
-                    <Input type="text" className="mt-5" label="العائلة"/>
-                    <Input type="email" className="mt-5" label="البريد الالكتروني"/>
-                    <Input type="tel" className="mt-5" label="الهاتف المحمول"/>
-                    <Textarea label="الملاحظات" className="mt-5"/>
-                    <div className="h-4"/>
-                    <Button className="mt-5 p-6 w-full text-xl" color="primary">إرسال</Button>
+                </MotionUpDiv>
+                <div className="w-full lg:w-1/2 max-w-xl flex flex-col items-center">
 
-                </MotionDiv>
-                <MotionDiv className="lg:w-1/2 max-w-xl flex flex-col items-center">
+                    <MotionUpDiv>
+                        <Input type="text" className="mt-5" label="الاسم"/>
+                    </MotionUpDiv>
+                    <MotionUpDiv>
+                        <Input type="text" className="mt-5" label="العائلة"/>
+                    </MotionUpDiv>
+                    <MotionUpDiv>
+                        <Input type="email" className="mt-5" label="البريد الالكتروني"/>
+                    </MotionUpDiv>
+                    <MotionUpDiv>
+                        <Input type="tel" className="mt-5" label="الهاتف المحمول"/>
+                    </MotionUpDiv>
+                    <MotionUpDiv>
+                        <Textarea label="الملاحظات" className="mt-5"/>
+                    </MotionUpDiv>
+                    <MotionUpDiv>
+                        <div className="h-4"/>
+                    </MotionUpDiv>
+                    <MotionUpDiv>
+                        <Button className="mt-5 p-6 w-full text-xl" color="primary">إرسال</Button>
+                    </MotionUpDiv>
+                </div>
+
+                <MotionUpDiv className="lg:w-1/2 max-w-xl flex flex-col items-center">
                     <div className="h-8"/>
                     <p>أو يمكنك التواصل معنا عبر منصاتنا الاجتماعية</p>
                     <div className="flex flex-wrap  mt-8">
@@ -75,7 +90,7 @@ export default function ContactUs() {
                             <Link key={social.name} className="text-2xl px-4 lg:px-8 pb-4 text-secondary" href={social.link}>{social.icon}</Link>
                         ))}
                     </div>
-                </MotionDiv>
+                </MotionUpDiv>
             </div>
 
             <div className="h-12 w-full flex justify-center items-center">
