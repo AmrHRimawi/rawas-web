@@ -3,8 +3,6 @@ import "./AboutUs.css"
 import AppTitle from "@/components/AppTitle";
 import AppTitle2 from "@/components/AppTitle2";
 import Image from "next/image";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faQuoteLeft, faQuoteRight} from "@fortawesome/free-solid-svg-icons";
 import ArrowDown from "@/components/ArrowDown";
 
 export default function AboutUs() {
@@ -46,7 +44,9 @@ export default function AboutUs() {
 
                         <div
                             className="absolute z-10 w-11/12 lg:w-8/12 min-h-72 border-1 rounded-2xl border-secondary bg-primary-foreground shadow-2xl px-2 lg:px-8 py-12 lg:py-16">
-                            <div className="absolute -top-12 left-20 z-20 w-20 h-30 text-9xl text-primary"><FontAwesomeIcon icon={faQuoteLeft}/></div>
+                            <div className="absolute -top-12 left-20 z-20 w-20 h-30 text-9xl text-primary">
+                                <Image src="/icons/qoute-left.svg" alt="qoute-left" width={82} height={76}/>
+                            </div>
                             <p>
                                 رسالة الى الجمهور
                             </p>
@@ -81,7 +81,9 @@ export default function AboutUs() {
                                 مدير ومؤسس شركة رواس
                             </p>
 
-                            <div className="absolute -bottom-24 right-12 z-30 w-10 h-40 text-9xl text-primary"><FontAwesomeIcon icon={faQuoteRight}/></div>
+                            <div className="absolute -bottom-12 right-12 z-30 w-20 h-30 text-9xl text-primary">
+                                <Image src="/icons/qoute-right.svg" alt="qoute-right" width={82} height={76}/>
+                            </div>
                         </div>
 
                     </div>
@@ -98,7 +100,7 @@ export default function AboutUs() {
 
 
                 <div className="h-40"/>
-                <div className="relative flex flex-col lg:justify-start items-center  ">
+                <div className="relative flex flex-col lg:flex-row lg:justify-start items-center  ">
                     <div className="border-secondary border-x-8 border-b-8 lg:border-y-8 lg:border-s-8 lg:border-e-0 rounded-2xl p-8 w-10/12">
                         <div className="h-32 lg:h-0"/>
                         <AppTitle2 className="" text="رسالة رواس"/>
@@ -145,8 +147,8 @@ export default function AboutUs() {
 
                         </div>
                     </div>
-                    <div className="absolute -top-32  lg:-left-12 max-w-1/3">
-                        <Image className=" max-w-1/3" width={600} height={600} src="/imgs/rawas-logo.svg" alt="Rawas"/>
+                    <div className="absolute -top-32 lg:top-32  lg:-left-12 max-w-1/3">
+                        <Image className="max-w-sm  lg:max-w-lg" width={600} height={600} src="/imgs/rawas-logo.svg" alt="Rawas"/>
                     </div>
                 </div>
 

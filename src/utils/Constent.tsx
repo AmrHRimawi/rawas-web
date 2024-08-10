@@ -1,5 +1,3 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faSquareInstagram, faSquareWhatsapp, faSquareYoutube, faTelegram} from "@fortawesome/free-brands-svg-icons";
 import {ColorScale} from "@nextui-org/react";
 
 export const navLinks = [
@@ -16,27 +14,32 @@ export const socials = (isColored: boolean = false) => {
     return [
         {
             name: "Facebook",
-            icon: <FontAwesomeIcon icon={faFacebook} color={isColored ? "#3b5998" : undefined} size="xl"/>,
+            color: "#3b5998",
+            src: "/icons/facebook.svg",
             link: "https://www.facebook.com/rawasps?mibextid=ZbWKwL",
         },
         {
-            name: "Instagram",
-            icon: <FontAwesomeIcon icon={faSquareInstagram} color={isColored ? "#e4405f" : undefined} size="xl"/>,
-            link: "https://www.instagram.com/rawas.ps",
-        },
-        {
             name: "Telegram",
-            icon: <FontAwesomeIcon icon={faTelegram} color={isColored ? "#5190ee" : undefined} size="xl"/>,
+            color: "#5190ee",
+            src: "/icons/telegram.svg",
             link: "https://t.me/rawasplus",
         },
         {
+            name: "Instagram",
+            color: "#e4405f",
+            src: "/icons/instagram.svg",
+            link: "https://www.instagram.com/rawas.ps",
+        },
+        {
             name: "WhatsApp",
-            icon: <FontAwesomeIcon icon={faSquareWhatsapp} color={isColored ? "#43a884" : undefined} size="xl"/>,
+            color: "#43a884",
+            src: "/icons/whatsapp.svg",
             link: "https://whatsapp.com/channel/0029VaZdaOx7j6fzk3ZH1x0q",
         },
         {
             name: "YouTube",
-            icon: <FontAwesomeIcon icon={faSquareYoutube} color={isColored ? "#ed0600" : undefined} size="xl"/>,
+            color: "#ed0600",
+            src: "/icons/youtube.svg",
             link: "https://youtube.com/@rawasplus?si=AaSnXzYRO3tisNiT",
         },
     ]

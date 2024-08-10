@@ -4,7 +4,8 @@ import React from "react";
 import {Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle} from "@nextui-org/react";
 import {AppLogo} from "@/components/AppLogo";
 import {usePathname} from "next/navigation";
-import {navLinks, socials} from "@/utils/Constent";
+import {navLinks, primary, socials} from "@/utils/Constent";
+import SourceIconLink from "@/components/SourceIconLink";
 
 export default function AppNavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -75,6 +76,7 @@ export default function AppNavBar() {
                             >
                                 {item.name}
                             </Link>
+
                         </NavbarItem>
                     )
                 })}
@@ -85,7 +87,7 @@ export default function AppNavBar() {
                 {
                     socials(!isMain || isScrolled).map(social => (
                         <NavbarItem key={social.name} className="hidden lg:flex">
-                            <Link href={social.link}>{social.icon}</Link>
+                            <SourceIconLink key={social.name} src={social.src} link={social.link} alt={social.name} color={!isMain || isScrolled ? social.color : primary[600]}/>
                         </NavbarItem>
                     ))
                 }
@@ -110,7 +112,7 @@ export default function AppNavBar() {
                 <NavbarMenuItem className="flex flex-wrap justify-center border-t-2 border-foreground-200 mt-3">
                     {
                         socials().map(social => (
-                            <Link className="p-5" key={social.name} href={social.link}>{social.icon}</Link>
+                            <SourceIconLink className="m-2" key={social.name} src={social.src} link={social.link} alt={social.name} color={primary[600]}/>
                         ))
                     }
                 </NavbarMenuItem>

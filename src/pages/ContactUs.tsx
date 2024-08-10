@@ -1,33 +1,36 @@
 import React from "react";
 import "./AboutUs.css"
 import AppTitle from "@/components/AppTitle";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Button, Input, Link, Textarea} from "@nextui-org/react";
-import IconText from "@/components/IconText";
-import {faFacebookMessenger, faLinkedin, faSquareInstagram, faSquareWhatsapp} from "@fortawesome/free-brands-svg-icons";
 import MotionUpDiv from "@/components/MotionUpDiv";
+import SourceIconText from "@/components/SourceIconText";
+import SourceIconLink from "@/components/SourceIconLink";
 
 export default function ContactUs() {
 
     const socialsContact = [
         {
             name: "LinkedIn",
-            icon: <FontAwesomeIcon icon={faLinkedin} size="xl"/>,
+            src: "/icons/linkedin.svg",
+            color: "#0077b5",
             link: "https://www.facebook.com"
         },
         {
             name: "Instagram",
-            icon: <FontAwesomeIcon icon={faSquareInstagram} size="xl"/>,
+            src: "/icons/instagram.svg",
+            color: "#e4405f",
             link: "https://www.facebook.com"
         },
         {
             name: "WhatsApp",
-            icon: <FontAwesomeIcon icon={faSquareWhatsapp} size="xl"/>,
+            src: "/icons/whatsapp.svg",
+            color: "#43a884",
             link: "https://www.facebook.com"
         },
         {
             name: "Messenger",
-            icon: <FontAwesomeIcon icon={faFacebookMessenger} size="xl"/>,
+            src: "/icons/messenger.svg",
+            color: "#0084ff",
             link: "https://www.facebook.com"
         },
     ];
@@ -41,13 +44,13 @@ export default function ContactUs() {
             <div className="flex flex-col justify-center items-center">
                 <MotionUpDiv className="lg:w-8/12 w-fit pt-4 pb-2 px-3 text-2xl flex flex-col lg:flex-row justify-evenly items-center bg-foreground-100 shadow-lg rounded-lg">
                     <Link href="tel:0593330060" className="text-2xl text-foreground">
-                        <IconText icon="faMobileScreen" iconProps={{className: "text-secondary  text-2xl"}}>0593330060</IconText>
+                        <SourceIconText src="/icons/phone.svg" alt="phone">0593330060</SourceIconText>
                     </Link>
                     <Link href="tel:0593330066" className="text-2xl text-foreground">
-                        <IconText icon="faMobileScreen" iconProps={{className: "text-secondary text-2xl"}}>0593330066</IconText>
+                        <SourceIconText src="/icons/phone.svg" alt="phone">0593330060</SourceIconText>
                     </Link>
                     <Link href="tel:022422766" className="text-2xl text-foreground">
-                        <IconText icon="faPhone" iconProps={{className: "text-secondary text-2xl"}}>022422766</IconText>
+                        <SourceIconText src="/icons/phone.svg" alt="phone">022422766</SourceIconText>
                     </Link>
                 </MotionUpDiv>
 
@@ -85,11 +88,14 @@ export default function ContactUs() {
                 <MotionUpDiv className="lg:w-1/2 max-w-xl flex flex-col items-center">
                     <div className="h-8"/>
                     <p>أو يمكنك التواصل معنا عبر منصاتنا الاجتماعية</p>
-                    <div className="flex flex-wrap  mt-8">
+                    <div className="flex flex-wrap gap-8 mt-8 px-4">
                         {socialsContact.map(social => (
-                            <Link key={social.name} className="text-2xl px-4 lg:px-8 pb-4 text-secondary" href={social.link}>{social.icon}</Link>
+                            <SourceIconLink key={social.name} src={social.src} link={social.link} alt={social.name} color={social.color} inSize={30}
+                                            outSize={60}/>
+
                         ))}
                     </div>
+                    <div className="h-8"/>
                 </MotionUpDiv>
             </div>
 
