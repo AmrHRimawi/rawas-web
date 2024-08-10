@@ -5,8 +5,8 @@ import {Button, Input, Textarea} from "@nextui-org/react";
 
 export default function Consultants() {
     return (
-        <div className="w-5/6">
-            <div className="h-16"/>
+        <section className="w-5/6">
+            <div className="h-32"/>
             <AppTitle text="ـستشارينا" prefix="مـ"/>
             <br/>
             <div className="flex flex-col justify-center items-center">
@@ -29,6 +29,6 @@ export default function Consultants() {
                 </div>
             </div>
             <div className="h-24"/>
-        </div>
+        </section>
     );
 }

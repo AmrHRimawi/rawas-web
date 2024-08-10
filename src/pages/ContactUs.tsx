@@ -34,7 +34,7 @@ export default function ContactUs() {
 
     return (
 
-        <div className="w-5/6">
+        <section className="w-5/6">
             <div className="h-24"/>
             <MotionUpDiv><AppTitle text="اصل معنا" prefix="تو"/></MotionUpDiv>
             <br/>
@@ -96,6 +96,6 @@ export default function ContactUs() {
             <div className="h-12 w-full flex justify-center items-center">
                 <div className="h-1 w-2/3 border-b-1 shadow-xl"/>
             </div>
-        </div>
+        </section>
     )
 }

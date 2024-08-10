@@ -10,14 +10,14 @@ import ArrowDown from "@/components/ArrowDown";
 export default function AboutUs() {
     return (<div>
 
-        <div className="about-us-header-section flex flex-col justify-end items-center p-10 lg:p-20">
+        <section className="about-us-header-section flex flex-col justify-end items-center p-10 lg:p-20">
             <div className="h-12 flex justify-center text-background drop-shadow-2xl">
                 <ArrowDown/>
                 <ArrowDown/>
             </div>
-        </div>
+        </section>
         <div className="w-full p-6 lg:p-20">
-            <div>
+            <section>
                 <AppTitle text="ـذة عن رواس" prefix="نبـ"/>
                 <div className="h-8"/>
                 <AppTitle2 className="" text="رؤية رواس"/>
@@ -150,7 +150,7 @@ export default function AboutUs() {
                     </div>
                 </div>
 
-            </div>
+            </section>
         </div>
     </div>)
 }

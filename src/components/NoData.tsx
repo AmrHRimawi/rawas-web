@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function NoData() {
     return (
-        <div className="flex flex-col justify-center items-center h-80">
+        <section className="flex flex-col justify-center items-center h-80">
             <Image width={500} height={400} src="/imgs/no-data.gif" alt="No Data" className="hue-rotate-180 -z-10"/>
             <p className="text-2xl">لا يوجد في الوقت الحالي</p>
-        </div>
+        </section>
     );
 }

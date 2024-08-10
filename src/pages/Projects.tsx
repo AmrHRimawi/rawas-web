@@ -6,7 +6,7 @@ import {Button, Link} from "@nextui-org/react";
 
 export default function Projects() {
     return (
-        <div className="w-5/6">
+        <section className="w-5/6">
             <div className="h-24"/>
             <MotionUpDiv><AppTitle text="ـشاريعنا" prefix="مـ"/></MotionUpDiv>
             <div className="h-24"/>
@@ -45,6 +45,6 @@ export default function Projects() {
             </div>
             <div className="h-24"/>
 
-        </div>
+        </section>
     )
 }
