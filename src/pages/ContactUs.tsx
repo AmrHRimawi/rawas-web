@@ -5,6 +5,7 @@ import {Button, Input, Link, Textarea} from "@nextui-org/react";
 import MotionUpDiv from "@/components/MotionUpDiv";
 import SourceIconText from "@/components/SourceIconText";
 import SourceIconLink from "@/components/SourceIconLink";
+import {AppLineSep} from "@/components/AppLineSep";
 
 export default function ContactUs() {
 
@@ -88,7 +89,7 @@ export default function ContactUs() {
                 <MotionUpDiv className="lg:w-1/2 max-w-xl flex flex-col items-center">
                     <div className="h-8"/>
                     <p>أو يمكنك التواصل معنا عبر منصاتنا الاجتماعية</p>
-                    <div className="flex flex-wrap gap-8 mt-8 px-4">
+                    <div className="flex flex-wrap justify-around gap-8 mt-8 px-4">
                         {socialsContact.map(social => (
                             <SourceIconLink key={social.name} src={social.src} link={social.link} alt={social.name} color={social.color} inSize={30}
                                             outSize={60}/>
@@ -99,9 +100,9 @@ export default function ContactUs() {
                 </MotionUpDiv>
             </div>
 
-            <div className="h-12 w-full flex justify-center items-center">
-                <div className="h-1 w-2/3 border-b-1 shadow-xl"/>
-            </div>
+            <AppLineSep/>
+            <div className="h-10"/>
+
         </section>
     )
 }

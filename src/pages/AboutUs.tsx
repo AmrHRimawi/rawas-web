@@ -1,158 +1,249 @@
 import React from "react";
-import "./AboutUs.css"
+import "./AboutUs.css";
 import AppTitle from "@/components/AppTitle";
 import AppTitle2 from "@/components/AppTitle2";
 import Image from "next/image";
 import ArrowDown from "@/components/ArrowDown";
+import {AppLineSep} from "@/components/AppLineSep";
+import MotionUpDiv from "@/components/MotionUpDiv";
 
 export default function AboutUs() {
-    return (<div>
+    const rawasWorkPillars = [
+        " اختيار الموقع من حيث المكان والاطلالة والمساحة والتوزيع الوظيفي بما يعكس مباني مليئة بالحياة متفردة بالشكل والمضمون.",
+        "اعلى انواع الجودة والتي تكمن في التفاصيل الوظيفية والمواد المستخدمة والفهم العميق والدراسة التحليلية للاستخدام العقاري.",
+        " خدمة ما بعد البيع من الركائز التي تسعى الشركة لتحقيق فارق ومنافس في خدماتها في هذه المرحلة.",
+        "التسليم في الموعد من الركائز التي تسعى الشركة الالتزام بها وبالجدول الزمني للتنفيذ.",
+    ];
 
-        <section className="about-us-header-section flex flex-col justify-end items-center p-10 lg:p-20">
-            <div className="h-12 flex justify-center text-background drop-shadow-2xl">
-                <ArrowDown/>
-                <ArrowDown/>
-            </div>
-        </section>
-        <div className="w-full p-6 lg:p-20">
-            <section>
-                <AppTitle text="ـذة عن رواس" prefix="نبـ"/>
-                <div className="h-8"/>
-                <AppTitle2 className="" text="رؤية رواس"/>
-                <p className="w-2/3">
-                    تتلخص رؤية الشركة بجزئين هو
-                    ان تصبح رواس الخيار الاول لكل راغب في التملك او الاستثمار او التطوير في قطاع العقارات الفلسطيني
-                    ان تجمع طاقات بشرية فلسطينية من ابناء شباب فلسطين في طواقمها ومستشاريها ومورديها لتصبح المنصة الاولى في الاستشارة والبحث
-                    والتوعية المجتمعة في صناعة العقار السكني والمكتبي وتقدم حلول عقارية جديدة مميزة
+    const rawasValues = [
+        {
+            title: "الكفاءة والاختصاص",
+            text: "تسعى شركة رواس الى تقديم كافة الحلول الخاصة في المجالات المختصة بكفاءة من خلال استقطاب طواقم فلسطينية مختصة بكافة المجالات التي تخص قطاع الاستثمار العقاري سواءا في الهندسة والتصميم او الانشاء او العمل الاداري في المبيعات والتسويق او المجال القانوني الخاص بالعقود الامتلاك والتملك."
+        },
+        {
+            title: "الامانة والتجرد",
+            text: "يضم هذا المبدئ الجوهر الاساسي للاتقان في اعمال الشركة بحيث تعطي الامور كما هي بحقها وبمهنية تنبع من واقع يحافظ على الحقوق والواجبات لكافة العاملين والزبائن والمستثمرين"
+        },
+        {
+            title: "الشفافية",
+            text: "تسعى الشركة لتقديم نموذج للاستثمار العقاري يعكس المعنى الحقيقي للقدرة العقارية في فلسطين ولتقديم ارقام واسعار تعكس الفائدة من الاسثمار العقاري"
+        },
+        {
+            title: "الاستدامة والابتكار",
+            text: "نحن نؤمن بدمج عروض المنتجات والتقنيات والأفكار الجديدة والمبتكرة والتأكد من أن منتجاتنا وخدماتنا تنافسية ومفيدة للعملاء والشركة. نحن نؤمن بالنمو والتنمية المستدامين، ليس فقط لصالح الشركة ولكن أيضًا لموظفينا وبيئتنا"
+        },
+        {
+            title: "التكيف لتبلبة رغبة العملاء",
+            text: "تؤمن الشركة باشراك الزبائن في الصفة الوظيفيه لتصميم المبنى المخصص للعمل التجاري والسكني وتطويع هذه المتطلبات وتقديمها في منتجات الشركة من خلال دراسات تسويقيه واستبيانات لبعض المشاكل التي تواجه الاستخدام للعقار حسب الوظيفة المطلوبة والشراكة والتعاون مع كافة المؤسسات والشركات والمنظمات التي تسعى لتحقيق بيئة وظيفيه افضل"
+        },
+        {
+            title: "التوعية والثقافة",
+            text: "تكرس الشركة جهودها لتقديم كافة المعلومات والادوات اللازمة لزيادة الوعي بالاستثمار العقاري في السوق الفلسطيني بما يخدم كافة الجهات المعنية وتقديم ودعم قنوات توعوية شابة تعمل على ترسيخ فكرة الاستثمار العقاري الصحيح"
+        },
+        {
+            title: "العمل المجتمعي",
+            text: "تؤمن الشركة بضوررة اشتراكها وتقديمها لكافة المساعدات والاشتراك بكافة الفعاليات المجتمعة كدور اساسي في الريادة وتقديم نموذج عالي من الاستثمار والتطوير لكافة طبقات المجتمع الفلسطيني"
+        },
+    ];
 
-                </p>
-
-                {/*--------------------------------------*/}
-                <div className="h-12"/>
-                <div className="w-full flex justify-center items-center">
-                    <div className="h-1 w-1/2 border-b-1 shadow-xl"/>
+    return (
+        <div>
+            <section className="about-us-header-section flex flex-col justify-end items-center p-10 lg:p-20">
+                <div className="h-12 flex justify-center text-background drop-shadow-2xl">
+                    <ArrowDown/>
+                    <ArrowDown/>
                 </div>
-                <div className="h-12"/>
-
-                <AppTitle2 className="" text="رسالة المؤسس"/>
-                <div>
-                    <Image width={607} height={607} src="/imgs/eng-imad.png" alt="iamd"/>
-
-                    <div className="h-80 sm:h-1"/>
-                    <div className="relative flex justify-center items-center">
-                        <div className="absolute z-0 w-full lg:w-9/12 h-96 border-8 rounded-2xl border-secondary shadow-xl"></div>
-
-                        <div
-                            className="absolute z-10 w-11/12 lg:w-8/12 min-h-72 border-1 rounded-2xl border-secondary bg-primary-foreground shadow-2xl px-2 lg:px-8 py-12 lg:py-16">
-                            <div className="absolute -top-12 left-20 z-20 w-20 h-30 text-9xl text-primary">
-                                <Image src="/icons/qoute-left.svg" alt="qoute-left" width={82} height={76}/>
-                            </div>
-                            <p>
-                                رسالة الى الجمهور
-                            </p>
-                            <br/>
-                            <p>
-                                أسسنا شركة رواس للإستثمار العقاري بداية عام 2024 إنطلاقا من رؤية جديدة معتمدة على خبرتنا الممتدة لأكثر من 20 عام في القطاع العقاري، تدرجنا فيها
-                                بكافة
-                                مسؤوليات صناعة العقار في محافظة رام الله والبيرة مما شكل لدينا خبرة واسعة في القطاع العقاري وخلق لدينا
-                                رغبة جامحة لمشاركة أحلام و أهداف أبناء شعبنا الطامحين في السكن والتملك والاستثمار, فكان لابد من تأسيس شركة رواس للاستثمار العقاري.
-                            </p>
-                            <p>
-                                أهيمة مشاريعنا تنبع من خبرتنا و فهمنا بأن اختيار الموقع هو الميزة والركيزة الأساسية التي تبنى عليها مشاريعنا واستثماراتنا المستقبلية، وعندما نتحدث
-                                عن
-                                اختيار الموقع لا نقصد فقط المكان بل طبيعة الإطلالة والتضاريس المحيطة و المشاريع المجاورة و الأهداف المرجوة من المشروع و المرافق الحيوية ومساحة أرض
-                                المشروع وأبعادها بما يعكس شكل المبنى وتفصيلاته الداخلية.
-                            </p>
-                            <p>
-                                ومن خلال التزامات وقيود حديدية فرضناها على أنفسنا وعلى طواقمنا في شركة رواس متمثلة باختيار أفضل المواقع و منتجات بأعلى جودة ممكنة مع تسليم بالموعد
-                                المحدد و خدمة ما بعد البيع .
-                            </p>
-                            <p>
-                                نسعى لتكون رواس الخيار الأول في الاستثمار والامتلاك والتطوير العقاري في فلسطين، وأن تصبح الرائدة في استقطاب الطاقات البشرية الفلسطينية لتقدم أضخم
-                                منصة
-                                للتوعية في الاستثمار العقاري الفلسطيني.
-                            </p>
-                            <br/>
-                            <p>
-                                المهندس عماد الخطيب
-                            </p>
-                            <p></p>
-                            <p>
-                                مدير ومؤسس شركة رواس
-                            </p>
-
-                            <div className="absolute -bottom-12 right-12 z-30 w-20 h-30 text-9xl text-primary">
-                                <Image src="/icons/qoute-right.svg" alt="qoute-right" width={82} height={76}/>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                {/*--------------------------------------*/}
-                <div className="h-96 sm:h-80"/>
-                <div className="h-48 sm:h-0"/>
-                <div className="h-12"/>
-                <div className="w-full flex justify-center items-center">
-                    <div className="h-1 w-1/2 border-b-1 shadow-xl"/>
-                </div>
-                <div className="h-12"/>
-
-
-                <div className="h-40"/>
-                <div className="relative flex flex-col lg:flex-row lg:justify-start items-center  ">
-                    <div className="border-secondary border-x-8 border-b-8 lg:border-y-8 lg:border-s-8 lg:border-e-0 rounded-2xl p-8 w-10/12">
-                        <div className="h-32 lg:h-0"/>
-                        <AppTitle2 className="" text="رسالة رواس"/>
-                        <div className="w-full lg:w-2/3">
-                            <p>
-                                نرى ان افضل رسالة تقدمها رواس من خلال مشاريعها على الارض والتي تصبح حياه للمواقع التي ترغب رواس بانشاء مشاريعها فيها ومن هنا جاءت رواس ...
-                            </p>
-                            <br/>
-                            <div className="flex justify-center items-center text-secondary text-xl">
-                                <p>
-                                    اينما حلت.. حياه
-                                </p>
-                            </div>
-                            <br/>
-                            <p>
-                                أهداف شركة رواس
-                            </p>
-                            <p>
-                                اهدافنا واضحة وتتزايد مع مرور الوقت بعمق تجربتنا في صناعة العقار السكني والمكتبي والمشاريع الجديدة المقترحة
-                            </p>
-                            <p>
-                                تتميز رواس بهدفها الاول وهو جمع الاستثمار في القدرات الفلسطينية الشابة لتشكل طاقم يؤدي دور الريادة في قطاع العقار الفلسطيني
-                            </p>
-                            <p>
-                                وتسعى رواس من خلال هدفها الثاني الى ان تشارك افضل عملاء وزبائن فلسطين تجربة استثمارية في كافة مراحل الاستثمار ابتداء من الرغبة في الاستثمار حتى
-                                الامتلاك
-                                وان تقدم حلول حقيقية لخدمة ما بعد البيع في قطاع صناعة العقار الفلسطيني
-                            </p>
-                            <br/>
-                            <p>
-                                تلتزم رواس امام عملائها بتحقيق ما تلزم به نفسها وطاقمها من محدداتها الاربعة والتي تتلخص :
-                            </p>
-                            <br/>
-                            <ol className="text-secondary">
-                                <li><span>1. </span><span>اختيار افضل المواقع</span></li>
-                                <li><span>2. </span><span>منتجات ذات جودة عالية</span></li>
-                                <li><span>3. </span><span>التسليم في الموعد</span></li>
-                                <li><span>4. </span><span>خدمة ما بعد البيع</span></li>
-                            </ol>
-                            <br/>
-                            <p>
-                                كما أن رواس تسعى لتحقيق هدف للمهتمين بالمعرفة والتوعية العقارية بحيث تسعى ان تكون المنصة الاولى في البحث والتوعية والاستشارة العقارية في فلسطين
-                            </p>
-
-                        </div>
-                    </div>
-                    <div className="absolute -top-32 lg:top-32  lg:-left-12 max-w-1/3">
-                        <Image className="max-w-sm  lg:max-w-lg" width={600} height={600} src="/imgs/rawas-logo.svg" alt="Rawas"/>
-                    </div>
-                </div>
-
             </section>
+            <div className="w-full p-6 lg:p-20">
+                <section>
+                    <AppTitle text="ـذة عن رواس" prefix="نبـ"/>
+                    <div className="h-8"/>
+                    <MotionUpDiv viewportAmount={0.2}>
+                        <p className="w-full">
+                            تاسست شركة رواس وهي شركة فلسطينية تعنى في قطاع صناعة العقار في عام 2024 وهي شركة مساهمة خصوصية بجهود وتطلعات ورؤية المؤسسين لخلق مفهوم جديد في صناعة
+                            العقار
+                            الفلسطيني في مدينة رام الله والبيرة وعموم الضفة الغربية مقر الشركة المؤقت في مدينة البيرة البالوع شاررع بلازا مول عمارة اسطنبول الطابق الثالث والموقع
+                            الدائم
+                            عمارة رواس جيت الطابق السادس حي الكرمل مقابل تلفزيون فلسطين برج مشعل في اول مشاريع شركة رواس في رام الله الاستثمارية
+                        </p>
+                    </MotionUpDiv>
+
+
+                    {/*-----------------------------*/}
+                    {/* company founders */}
+                    <div className="h-32"/>
+                    <AppTitle2 className="" text="رسالة المؤسسين"/>
+                    <div className="min-h-72 h-fit">
+                        <div className="flex justify-center mt-10 text-2xl">
+                            <MotionUpDiv className="flex flex-col items-center">
+                                <Image className="border-5 border-primary rounded-full" width={240} height={240} src="/imgs/eng-imad.png" alt="iamd"/>
+                                <div className="m-3">المهندس عماد الخطيب</div>
+                            </MotionUpDiv>
+                            <div className="w-10 h10"/>
+                            <MotionUpDiv className="flex flex-col items-center">
+                                <Image className="border-5 border-primary rounded-full" width={240} height={240} src="/imgs/eng-imad.png" alt="iamd"/>
+                                <div className="m-3">الحاج عبد الحافظ الخطيب</div>
+                            </MotionUpDiv>
+                        </div>
+
+                        <div className="h-8"/>
+
+                        <MotionUpDiv viewportAmount={0.2} className="relative">
+                            <div className="relative flex justify-center items-center">
+                                <div className="absolute z-0 w-full lg:w-[71%] h-5/6 border-10 rounded-4xl border-secondary "></div>
+                                <div
+                                    className="relative z-10 w-11/12 lg:w-8/12 min-h-72 border-1 rounded-4xl border-secondary bg-primary-foreground drop-shadow-xl px-2 lg:px-8 py-12 lg:py-16">
+                                    <div className="absolute -top-12 left-20 z-20 w-20 h-30">
+                                        <Image src="/icons/qoute-left.svg" alt="qoute-left" width={82} height={76}/>
+                                    </div>
+                                    <p>
+                                        أسسنا شركة رواس للإستثمار العقاري بداية عام 2024 إنطلاقا من رؤية جديدة معتمدة على خبرتنا الممتدة لأكثر من 20 عام في القطاع العقاري، تدرجنا
+                                        فيها
+                                        بكافة مسؤوليات صناعة العقار في محافظة رام الله والبيرة مما شكل لدينا خبرة واسعة وخلق لدينا رغبة جامحة لمشاركة أحلام وأهداف أبناء شعبنا
+                                        الطامحين
+                                        في السكن والتملك والاستثمار, فكان لابد من تأسيس شركة رواس للاستثمار العقاري.
+                                    </p>
+                                    <div className="h-1"/>
+                                    <p>
+                                        أهمية مشاريعنا تنبع من خبرتنا وفهمنا بأن اختيار الموقع هو الميزة
+                                        والركيزة الأساسية التي تبنى عليها مشاريعنا واستثماراتنا المستقبلية، وعندما نتحدث عن اختيار الموقع لا نقصد فقط المكان بل طبيعة الإطلالة
+                                        والتضاريس
+                                        المحيطة والمشاريع المجاورة والأهداف المرجوة من المشروع والمرافق الحيوية ومساحة أرض المشروع وأبعادها بما يعكس شكل المبنى وتفصيلاته الداخلية.
+                                    </p>
+                                    <div className="h-1"/>
+                                    <p>
+                                        ومن خلال التزامات وقيود حديدية فرضناها على أنفسنا وعلى طواقمنا في شركة رواس متمثلة باختيار أفضل المواقع ومنتجات بأعلى جودة ممكنة وتسليم
+                                        بالموعد
+                                        المحدد وخدمة ما بعد البيع.
+                                    </p>
+                                    <div className="h-1"/>
+                                    <p>
+                                        نسعى لتكون رواس الخيار الأول في الاستثمار والامتلاك والتطوير العقاري في فلسطين، وأن تصبح الرائدة في استقطاب الطاقات
+                                        البشرية الفلسطينية لتقدم أضخم منصة للتوعية في الاستثمار العقاري الفلسطيني.
+                                    </p>
+                                    <div className="absolute -bottom-12 right-12 z-30 w-20 h-30">
+                                        <Image src="/icons/qoute-right.svg" alt="qoute-right" width={82} height={76}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </MotionUpDiv>
+                    </div>
+
+                    {/*-----------------------------*/}
+                    {/* company vision */}
+                    <div className="h-32"/>
+                    <AppTitle2 className="" text="رؤية رواس"/>
+                    <div className="h-12"/>
+
+                    <MotionUpDiv viewportAmount={0.2}>
+                        <div className="flex justify-center w-full">
+                            <p className="w-10/12 bg-primary text-primary-foreground p-16 rounded-es-6xl rounded-se-6xl lg:ps-24 lg:rounded-es-full lg:rounded-se-full">
+                                تبني شركة رواس من خلال احتكاكها في رياديي وطاقات المجتمع الفلسطيني قاعدة اساسية في الريادة لتكون الخيار الاول للاستثمار العقاري في فلسطين بصفتها
+                                المهنية
+                                والوظيفية والطلب الاول لكل باحث عن تطوير عقاري لمنشئته وظيفيا ومعماريا كما وتسعى لبناء منصة توعوية خاصة بامتلاك واستثمار العقار في فلسطين
+                            </p>
+                        </div>
+                    </MotionUpDiv>
+
+                    {/*-----------------------------*/}
+                    {/* company message and goals */}
+                    <div className="h-32"/>
+                    <MotionUpDiv><AppTitle2 className="" text="رسالة الشركة وأهدافها"/></MotionUpDiv>
+                    <div className="h-12"/>
+                    <MotionUpDiv viewportAmount={0.2}>
+                        <div className="relative">
+                            <div className="relative flex justify-center items-center">
+                                <div className="absolute z-0 w-full lg:w-[71%] h-5/6 border-10 rounded-4xl border-secondary "></div>
+                                <div
+                                    className="relative z-10 w-11/12 lg:w-8/12 min-h-72 border-1 rounded-4xl border-secondary bg-primary-foreground drop-shadow-xl px-2 lg:px-8 py-12 lg:py-16">
+                                    <div className="absolute -top-12 left-20 z-20 w-20 h-30">
+                                        <Image src="/icons/qoute-left.svg" alt="qoute-left" width={82} height={76}/>
+                                    </div>
+                                    <p className="text-secondary">رسالة الشركة</p>
+                                    <br/>
+                                    <p>
+                                        تسعى شركة رواس من خلال اختيارها لمواقع مشاريعها ان تبعث الحياة في المناطق التي تؤسس لاستثمارها فيها لكي تغدو المنطقة اكثر قيمة وحياه وتشغيل
+                                        ومن
+                                        هنا
+                                        جاءت رواس
+                                    </p>
+                                    <br/>
+                                    <div className="flex justify-center items-center text-secondary text-3xl adam-script-font">
+                                        <p>أينما حلّت.. حياة</p>
+                                    </div>
+                                    <br/>
+                                    <p className="text-secondary">أهداف الشركة</p>
+                                    <br/>
+                                    <p>تهدف الشركة لتحقيق عدة اهداف وركائز في قطاع العقار الفلسطيني</p>
+                                    <br/>
+                                    <ul className="list-disc ps-5 my-2">
+                                        <li>ان تصبح الشركة الواجهة الرئيسية لاستقطاب الطاقات الريادية الشابة الراغبة بالتميز في العمل بالقطاع العقاري في فلسطين لتحقق
+                                            الريادة والتفرد في
+                                            مشاريعها الخاصة والمشتركة.
+                                        </li>
+                                        <li>تسعى لتقديم حلول تطويرية لمشاريع عقارية جديدة وافكار مميزة وتصميمات مبتكرة في قطاع العقاري الفلسطيني.</li>
+                                        <li>ان يعيش العملاء تجربة امتلاك واستثمار عقارية مميزة في جميع مراحلها وخاصة مرحلة ما بعد البيع.</li>
+                                        <li>ان تصبح رواس منصة توعوية ومقصد لكل راغب للمعرفة والاستشارة بما يخص القطاع العقاري الفلسطيني.</li>
+                                    </ul>
+                                    <br/>
+                                    <div className="absolute -bottom-12 right-12 z-30 w-20 h-30">
+                                        <Image src="/icons/qoute-right.svg" alt="qoute-right" width={82} height={76}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </MotionUpDiv>
+
+                    {/*-----------------------------*/}
+                    {/* work pillars */}
+                    <div className="h-32"/>
+                    <MotionUpDiv>
+                        <AppTitle2 className="" text="ركائز العمل لدى شركة رواس"/>
+                        <p>تسعى الى تحقيق اهدافنا من التزامنا العميق بركائز الشركة الاربعة</p>
+                    </MotionUpDiv>
+                    <div className="h-12"/>
+                    <div>
+                        <div className="w-full flex flex-wrap justify-around">
+                            {rawasWorkPillars.map((pillar, i) => (
+                                <MotionUpDiv key={i} className="bg-primary-foreground rounded-4xl pt-4 text-primary-foreground leading-tight">
+                                    <div className="relative bg-primary rounded-full px-8 py-14 text-center w-72 h-72 flex items-center justify-center">
+                                        <div className="absolute -top-1.5 right-3.5 bg-secondary rounded-full w-21 h-21 flex items-center justify-center">
+                                            <p className="text-secondary-foreground text-4xl font-bold mt-2">{i + 1}</p>
+                                        </div>
+                                        {pillar}
+                                    </div>
+                                </MotionUpDiv>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/*-----------------------------*/}
+                    {/* company values */}
+                    <div className="h-32"/>
+                    <MotionUpDiv>
+                        <AppTitle2 className="" text="الممارسات والقيم لدى شركة رواس"/>
+                        <p>نحن نقدم أعلى مستوى من خدمة العملاء بشفافية ونزاهة كاملة بفريق من المختصين الاكفاء وتتلخص هذه القيم</p>
+                    </MotionUpDiv>
+                    <div className="h-16"/>
+                    <div className="w-full flex flex-wrap justify-around">
+                        {rawasValues.map((value, i) => (
+                            <MotionUpDiv key={i} viewportAmount={0.5} className="relative bg-primary-foreground rounded-4xl p-4 mb-12 max-w-124">
+                                <div
+                                    className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background border-5 border-secondary rounded-full w-24 h-24 flex items-center justify-center">
+                                    <p className="text-secondary text-4xl font-bold">{i + 1}</p>
+                                </div>
+                                <div className="text-center border-5 border-secondary rounded-6xl h-full min-h-120 px-8 pt-14 pb-2">
+                                    <p className="text-primary font-bold">{value.title}</p>
+                                    <p className="text-primary mt-2">{value.text}</p>
+                                </div>
+                            </MotionUpDiv>
+                        ))}
+                    </div>
+
+                    <AppLineSep/>
+
+                </section>
+            </div>
         </div>
-    </div>)
+    );
 }

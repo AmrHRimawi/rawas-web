@@ -10,7 +10,7 @@ export default function AppFooter() {
 
 
     return (
-        <section className="w-full flex flex-col justify-between items-center lg:items-start lg:min-h-lvh">
+        <section className="w-full flex flex-col justify-between items-center lg:items-start lg:h-lvh">
             <MotionEndDiv className=" px-12">
                 <div className="bg-primary-foreground p-5 translate-y-28 shadow-2xl border-t-2 rounded-full">
                     <Image width={200} height={200} src="/imgs/rawas-logo.svg" alt="Rawas"/>
@@ -28,7 +28,7 @@ export default function AppFooter() {
                         </MotionEndDiv>
 
                         <div className="h-4"/>
-                        <MotionEndDiv className="text-secondary text-4xl  m-2 drop-shadow-xl adam-script-font">أينما حلت .. حياة</MotionEndDiv>
+                        <MotionEndDiv className="text-secondary text-4xl  m-2 drop-shadow-xl adam-script-font">أينما حلّت.. حياة</MotionEndDiv>
                         <div className="h-4"/>
                         <MotionEndDiv className="flex justify-center lg:justify-start text-secondary">
                             {

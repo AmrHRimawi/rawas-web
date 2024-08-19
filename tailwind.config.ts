@@ -58,6 +58,24 @@ const config: Config = {
             colors: {
                 primary,
                 secondary,
+            },
+            borderWidth: {
+                '10': '10px',
+                '12': '12px',
+                '14': '14px',
+                '16': '16px',
+            },
+            borderRadius: {
+                '4xl': '2rem',
+                '5xl': '2.5rem',
+                '6xl': '3rem',
+            },
+            spacing: {
+                '21': '5.3rem',
+                '22': '5.5rem',
+                '120': '26rem',
+                '124': '27rem',
+                '128': '28rem',
             }
         },
     },

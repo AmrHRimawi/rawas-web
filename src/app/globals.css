@@ -25,6 +25,7 @@
 body {
     direction: rtl;
     font-weight: 300;
+    font-size: 15pt;
 }
 
 @layer utilities {

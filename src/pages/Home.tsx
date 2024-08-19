@@ -20,7 +20,7 @@ export default function Home() {
             <div className="flex flex-col items-center w-1/2">
                 <MotionUpDiv className="text-white text-5xl md:text-7xl lg:text-9xl font-bold m-1  drop-shadow-xl">رواس</MotionUpDiv>
                 <div className="flex flex-col items-center relative w-full">
-                    <MotionUpDiv className="text-white text-4xl md:text-6xl lg:text-8xl m-1 drop-shadow-xl adam-script-font absolute top-0">أينما حلت .. حياة</MotionUpDiv>
+                    <MotionUpDiv className="text-white text-4xl md:text-6xl lg:text-8xl m-1 drop-shadow-xl adam-script-font absolute top-0">أينما حلّت.. حياة</MotionUpDiv>
                     <MotionUpDiv className="w-full h-4 bg-secondary text-secondary drop-shadow-xl absolute top-6 md:top-10 lg:top-16 -z-10">--</MotionUpDiv>
                 </div>
             </div>
