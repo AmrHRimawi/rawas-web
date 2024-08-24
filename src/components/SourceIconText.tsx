@@ -13,8 +13,8 @@ interface SourceIconTextProps extends React.HTMLAttributes<HTMLDivElement> {
 const SourceIconText: React.FC<SourceIconTextProps>
     = ({className = "", src, alt, size = 20, children, ...props}: SourceIconTextProps) => {
     return (
-        <div className={"icon-text flex justify-center item-center " + className} {...props}>
-            <Image src={src} alt={alt} width={size} height={size}/>
+        <div className={"icon-text flex justify-center items-start " + className} {...props}>
+            <Image className="mt-2" src={src} alt={alt} width={size} height={size}/>
             <span className="ms-3 mt-1"> {children} </span>
         </div>
     )

@@ -7,7 +7,7 @@ interface MotionDivProps extends MotionProps {
     children: React.ReactNode,
     className?: string,
     viewportAmount?: number,
-    key?: number
+    key?: number | string
 }
 
 const MotionUpDiv: React.FC<MotionDivProps> = ({children, className = "w-full", viewportAmount = 0.8, key, ...props}) => {

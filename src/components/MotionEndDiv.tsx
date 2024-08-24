@@ -4,12 +4,13 @@ import React from 'react';
 import {motion, MotionProps} from "framer-motion";
 
 interface MotionDivProps extends MotionProps {
-    children: React.ReactNode;
-    className?: string;
-    viewportAmount?: number;
+    children: React.ReactNode,
+    className?: string,
+    viewportAmount?: number,
+    key?: number | string
 }
 
-const MotionEndDiv: React.FC<MotionDivProps> = ({children, className, viewportAmount = 0.5, ...props}) => {
+const MotionEndDiv: React.FC<MotionDivProps> = ({children, className, viewportAmount = 0.5, key, ...props}) => {
     const motionProps: MotionProps = {...props};
 
     return (
@@ -19,6 +20,7 @@ const MotionEndDiv: React.FC<MotionDivProps> = ({children, className, viewportAm
             viewport={{amount: viewportAmount}}
             transition={{duration: 1}}
             className={className}
+            key={key}
             {...motionProps}
         >
             {children}
