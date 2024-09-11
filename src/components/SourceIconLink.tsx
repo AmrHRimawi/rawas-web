@@ -19,7 +19,7 @@ const SourceIconLink: React.FC<SourceIconLinkProps> = ({className = "", src, lin
         height: outSize,
         '--outSize': `${outSize}px`,
         '--bgColor': color
-    }} {...props}>
+    } as React.CSSProperties} {...props}>
         <Link href={link}>
             <Image src={src} alt={alt} width={inSize} height={inSize}/>
         </Link>

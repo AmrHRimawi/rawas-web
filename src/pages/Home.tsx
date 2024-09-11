@@ -6,6 +6,7 @@ import ContactUs from "@/pages/ContactUs";
 import Projects from "@/pages/Projects";
 import ArrowDown from "@/components/ArrowDown";
 import MotionUpDiv from "@/components/MotionUpDiv";
+import {pathPrefix} from "@/utils/Constent";
 
 export default function Home() {
 
@@ -35,7 +36,7 @@ export default function Home() {
 
             <Projects/>
 
-            <Button href="/projects" as={Link} className="my-5 p-6 w-1/4 text-xl" color="primary">
+            <Button href={pathPrefix + "/projects"} as={Link} className="my-5 p-6 w-1/4 text-xl" color="primary">
                 لمشاهدة المزيد
             </Button>
 

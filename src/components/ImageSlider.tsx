@@ -59,7 +59,7 @@ export default function ImageSlider({images, className, ...props}: Readonly<Imag
     return (
         <div className={"relative w-full " + className} {...props}>
             <div
-                className="relative w-full h-[620px] group hover:-translate-y-0.5"
+                className="relative w-full h-[720px] group hover:-translate-y-0.5"
                 onMouseOver={handleMouseOver}
                 onMouseLeave={handleMouseLeave}
             >

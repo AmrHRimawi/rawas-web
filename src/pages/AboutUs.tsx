@@ -6,6 +6,7 @@ import Image from "next/image";
 import ArrowDown from "@/components/ArrowDown";
 import {AppLineSep} from "@/components/AppLineSep";
 import MotionUpDiv from "@/components/MotionUpDiv";
+import {pathPrefix} from "@/utils/Constent";
 
 export default function AboutUs() {
     const rawasWorkPillars = [
@@ -76,12 +77,12 @@ export default function AboutUs() {
                     <div className="min-h-72 h-fit">
                         <div className="flex justify-center mt-10 text-2xl">
                             <MotionUpDiv className="flex flex-col items-center">
-                                <Image className="border-5 border-primary rounded-full" width={240} height={240} src="/imgs/eng-imad.png" alt="iamd"/>
+                                <Image className="border-5 border-primary rounded-full" width={240} height={240} src={pathPrefix + "/images/eng-imad.png"} alt="iamd"/>
                                 <div className="m-3">المهندس عماد الخطيب</div>
                             </MotionUpDiv>
                             <div className="w-10 h10"/>
                             <MotionUpDiv className="flex flex-col items-center">
-                                <Image className="border-5 border-primary rounded-full" width={240} height={240} src="/imgs/eng-imad.png" alt="iamd"/>
+                                <Image className="border-5 border-primary rounded-full" width={240} height={240} src={pathPrefix + "/images/haj-hafes.png"} alt="iamd"/>
                                 <div className="m-3">الحاج عبد الحافظ الخطيب</div>
                             </MotionUpDiv>
                         </div>
@@ -94,7 +95,7 @@ export default function AboutUs() {
                                 <div
                                     className="relative z-10 w-11/12 lg:w-8/12 min-h-72 border-1 rounded-4xl border-secondary bg-primary-foreground drop-shadow-xl px-2 lg:px-8 py-12 lg:py-16">
                                     <div className="absolute -top-12 left-20 z-20 w-20 h-30">
-                                        <Image src="/icons/qoute-left.svg" alt="qoute-left" width={82} height={76}/>
+                                        <Image src={pathPrefix + "/icons/qoute-left.svg"} alt="qoute-left" width={82} height={76}/>
                                     </div>
                                     <p>
                                         أسسنا شركة رواس للإستثمار العقاري بداية عام 2024 إنطلاقا من رؤية جديدة معتمدة على خبرتنا الممتدة لأكثر من 20 عام في القطاع العقاري، تدرجنا
@@ -122,7 +123,7 @@ export default function AboutUs() {
                                         البشرية الفلسطينية لتقدم أضخم منصة للتوعية في الاستثمار العقاري الفلسطيني.
                                     </p>
                                     <div className="absolute -bottom-12 right-12 z-30 w-20 h-30">
-                                        <Image src="/icons/qoute-right.svg" alt="qoute-right" width={82} height={76}/>
+                                        <Image src={pathPrefix + "/icons/qoute-right.svg"} alt="qoute-right" width={82} height={76}/>
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +158,7 @@ export default function AboutUs() {
                                 <div
                                     className="relative z-10 w-11/12 lg:w-8/12 min-h-72 border-1 rounded-4xl border-secondary bg-primary-foreground drop-shadow-xl px-2 lg:px-8 py-12 lg:py-16">
                                     <div className="absolute -top-12 left-20 z-20 w-20 h-30">
-                                        <Image src="/icons/qoute-left.svg" alt="qoute-left" width={82} height={76}/>
+                                        <Image src={pathPrefix + "/icons/qoute-left.svg"} alt="qoute-left" width={82} height={76}/>
                                     </div>
                                     <p className="text-secondary">رسالة الشركة</p>
                                     <br/>
@@ -187,7 +188,7 @@ export default function AboutUs() {
                                     </ul>
                                     <br/>
                                     <div className="absolute -bottom-12 right-12 z-30 w-20 h-30">
-                                        <Image src="/icons/qoute-right.svg" alt="qoute-right" width={82} height={76}/>
+                                        <Image src={pathPrefix + "/icons/qoute-right.svg"} alt="qoute-right" width={82} height={76}/>
                                     </div>
                                 </div>
                             </div>

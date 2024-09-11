@@ -1,13 +1,16 @@
 import {ColorScale} from "@nextui-org/react";
 
+export const pathPrefix = "/rawas-web";
+// export const pathPrefix = "";
+
 export const navLinks = [
-    {name: "الرئيسية", link: "/"},
-    {name: "عن رواس", link: "/about-us"},
-    {name: "مشاريعنا", link: "/projects"},
-    {name: "مستشاري رواس", link: "/consultants"},
-    {name: "موردي رواس", link: "/suppliers"},
-    {name: "مقالات وأخبار", link: "/blogs"},
-    {name: "تواصل معنا", link: "/contact-us"},
+    {name: "الرئيسية", link: `${pathPrefix}/`},
+    {name: "عن رواس", link: `${pathPrefix}/about-us`},
+    {name: "مشاريعنا", link: `${pathPrefix}/projects`},
+    {name: "مستشاري رواس", link: `${pathPrefix}/consultants`},
+    {name: "موردي رواس", link: `${pathPrefix}/suppliers`},
+    {name: "مقالات وأخبار", link: `${pathPrefix}/blogs`},
+    {name: "تواصل معنا", link: `${pathPrefix}/contact-us`},
 ];
 
 export const socials = (isColored: boolean = false) => {
@@ -15,31 +18,31 @@ export const socials = (isColored: boolean = false) => {
         {
             name: "Facebook",
             color: "#3b5998",
-            src: "/icons/facebook.svg",
+            src: `${pathPrefix}/icons/facebook.svg`,
             link: "https://www.facebook.com/rawasps?mibextid=ZbWKwL",
         },
         {
             name: "Telegram",
             color: "#5190ee",
-            src: "/icons/telegram.svg",
+            src: `${pathPrefix}/icons/telegram.svg`,
             link: "https://t.me/rawasplus",
         },
         {
             name: "Instagram",
             color: "#e4405f",
-            src: "/icons/instagram.svg",
+            src: `${pathPrefix}/icons/instagram.svg`,
             link: "https://www.instagram.com/rawas.ps",
         },
         {
             name: "WhatsApp",
             color: "#43a884",
-            src: "/icons/whatsapp.svg",
+            src: `${pathPrefix}/icons/whatsapp.svg`,
             link: "https://whatsapp.com/channel/0029VaZdaOx7j6fzk3ZH1x0q",
         },
         {
             name: "YouTube",
             color: "#ed0600",
-            src: "/icons/youtube.svg",
+            src: `${pathPrefix}/icons/youtube.svg`,
             link: "https://youtube.com/@rawasplus?si=AaSnXzYRO3tisNiT",
         },
     ]

@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "@nextui-org/react";
-import {navLinks, secondary, socials} from "@/utils/Constent";
+import {navLinks, pathPrefix, secondary, socials} from "@/utils/Constent";
 import MotionEndDiv from "@/components/MotionEndDiv";
 import Image from "next/image";
 import SourceIconLink from "@/components/SourceIconLink";
@@ -13,7 +13,7 @@ export default function AppFooter() {
         <section className="w-full flex flex-col justify-between items-center lg:items-start lg:h-lvh">
             <MotionEndDiv className=" px-12">
                 <div className="bg-primary-foreground p-5 translate-y-28 shadow-2xl border-t-2 rounded-full">
-                    <Image width={200} height={200} src="/imgs/rawas-logo.svg" alt="Rawas"/>
+                    <Image width={200} height={200} src={pathPrefix + "/images/rawas-logo.svg"} alt="Rawas"/>
                 </div>
             </MotionEndDiv>
 
@@ -49,7 +49,7 @@ export default function AppFooter() {
                         {navLinks.map((item, index) => (
                             <div key={`${item.name}-${index}`} className="flex">
                                 <MotionEndDiv><Link className="text-primary-foreground" href={item.link}>
-                                    <SourceIconText src="/icons/left-angle.svg" alt={item.name} size={12}>{item.name}</SourceIconText>
+                                    <SourceIconText src={pathPrefix + "/icons/left-angle.svg"} alt={item.name} size={12}>{item.name}</SourceIconText>
                                 </Link></MotionEndDiv>
                             </div>
                         ))}
@@ -63,19 +63,19 @@ export default function AppFooter() {
                         <MotionEndDiv><p className="text-2xl pb-3">معلومات رواس</p></MotionEndDiv>
                         <div className="flex flex-col justify-between items-start h-full gap-3">
                             <MotionEndDiv>
-                                <SourceIconText src="/icons/phone.svg" alt="phone">0593330060</SourceIconText>
+                                <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">0593330060</SourceIconText>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <SourceIconText src="/icons/phone.svg" alt="phone">0593330066</SourceIconText>
+                                <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">0593330066</SourceIconText>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <SourceIconText src="/icons/rotary-telphone.svg" alt="phone">022422766</SourceIconText>
+                                <SourceIconText src={pathPrefix + "/icons/rotary-telphone.svg"} alt="phone">022422766</SourceIconText>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <SourceIconText src="/icons/mail.svg" alt="mail">info@rawas.ps</SourceIconText>
+                                <SourceIconText src={pathPrefix + "/icons/mail.svg"} alt="mail">info@rawas.ps</SourceIconText>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <SourceIconText src="/icons/map-pin.svg" alt="map pin">رام الله، البيرة، البالوع،عمارة اسطنبول،ط3</SourceIconText>
+                                <SourceIconText src={pathPrefix + "/icons/map-pin.svg"} alt="map pin">رام الله، البيرة، البالوع،عمارة اسطنبول،ط3</SourceIconText>
                             </MotionEndDiv>
                             <div className="h-2"/>
                             <MotionEndDiv><p className="text-2xl pb-3">أوقات الدوام</p></MotionEndDiv>

@@ -21,7 +21,7 @@ interface SuggestedCarouselProps extends React.DetailedHTMLProps<React.HTMLAttri
     isRTL?: boolean
 }
 
-export default function Carousel({images, className, isRTL = "rtl", ...props}: Readonly<SuggestedCarouselProps>) {
+export default function Carousel({images, className, isRTL = true, ...props}: Readonly<SuggestedCarouselProps>) {
     const containerRef = useRef<HTMLUListElement | null>(null)
     const itemsRef = useRef<(HTMLLIElement | null)[]>([])
     const [activeSlide, setActiveSlide] = useState(START_INDEX)
@@ -39,7 +39,8 @@ export default function Carousel({images, className, isRTL = "rtl", ...props}: R
     const hoverTypeTranslate = {
         "prev": "السابق",
         "next": "التالي",
-        "click": "انقر"
+        "click": "انقر",
+        "drag": "اسحب"
     }
 
     function resetDragState() {
@@ -57,15 +58,14 @@ export default function Carousel({images, className, isRTL = "rtl", ...props}: R
 
     function scrollPrev() {
         if (!canScrollPrev) return
-        const prevWidth = itemsRef.current.at(activeSlide - 1)?.getBoundingClientRect().width
+        const prevWidth = itemsRef.current.at(activeSlide - 1)?.getBoundingClientRect().width ?? FALLBACK_WIDTH
         if (activeSlide === 1) offsetX.set(offsetX.get() + (isRTL ? -prevWidth : prevWidth))
         setActiveSlide((prev) => prev - 1)
     }
 
     function scrollNext() {
-
         if (!canScrollNext) return
-        const nextWidth = itemsRef.current.at(activeSlide + 1)?.getBoundingClientRect().width
+        const nextWidth = itemsRef.current.at(activeSlide + 1)?.getBoundingClientRect().width ?? FALLBACK_WIDTH
         if (activeSlide === 0) offsetX.set(offsetX.get() - (isRTL ? -nextWidth : nextWidth))
         setActiveSlide((prev) => prev + 1)
     }
@@ -75,7 +75,6 @@ export default function Carousel({images, className, isRTL = "rtl", ...props}: R
         if (!parent) return
         const {left: parentLeft, top: parentTop, right: parentRight, bottom: parentBottom} = parent.getBoundingClientRect()
         const {left, top, width, height} = currentTarget.getBoundingClientRect()
-        console.log("button: ", left, top, width, height)
         const centerX = left - width / 2
         const centerY = top - height / 2
         const offsetFromCenterX = clientX - centerX
@@ -109,7 +108,7 @@ export default function Carousel({images, className, isRTL = "rtl", ...props}: R
                         )
                     }
                 >
-                    {hoverTypeTranslate[hoverType] ?? "اسحب"}
+                    {hoverTypeTranslate[hoverType ?? "drag"]}
                 </motion.span>
             </motion.div>
         </motion.div>
@@ -122,14 +121,11 @@ export default function Carousel({images, className, isRTL = "rtl", ...props}: R
                 // dragConstraints={{left: isRTL ? 0 : -(FALLBACK_WIDTH * (images.length - 1)), right: isRTL ? -(FALLBACK_WIDTH * (images.length - 1)) : 0}}
                 dragConstraints={{left: 0, right: 0}}
                 onMouseMoveCapture={({currentTarget, clientX, clientY}) => {
-                    console.log("mouse: ", clientX, clientY)
                     const parent = currentTarget.offsetParent
                     if (!parent) return
                     const {left, top, right, bottom} = parent.getBoundingClientRect()
-                    console.log("parent: ", left, top, right, bottom)
                     let x = clientX - (right - left) / 2 - CURSOR_SIZE;
                     let y = clientY - (bottom + top) / 2;
-                    console.log("offset: ", x, y)
                     mouseX.set(clientX - (right - left) / 2 - CURSOR_SIZE)
                     mouseY.set(clientY - (bottom + top) / 2)
                 }}
@@ -147,7 +143,9 @@ export default function Carousel({images, className, isRTL = "rtl", ...props}: R
                     return (<motion.li
                         layout
                         key={img.title}
-                        ref={(el) => (itemsRef.current[index] = el)}
+                        ref={(el) => {
+                            itemsRef.current[index] = el
+                        }}
                         className={cn("group relative shrink-0 select-none px-3 transition-opacity duration-300", !active && "opacity-30")}
                         transition={{ease: "easeInOut", duration: 0.4}}
                         style={{flexBasis: active ? "60%" : "20%"}}

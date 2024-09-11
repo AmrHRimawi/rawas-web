@@ -4,31 +4,27 @@ import React from "react";
 import {Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle} from "@nextui-org/react";
 import {AppLogo} from "@/components/AppLogo";
 import {usePathname} from "next/navigation";
-import {navLinks, primary, socials} from "@/utils/Constent";
+import {navLinks, pathPrefix, primary, socials} from "@/utils/Constent";
 import SourceIconLink from "@/components/SourceIconLink";
 
+const mainPath = `${pathPrefix}/`;
 export default function AppNavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-    const path = usePathname() ?? "";
-    console.log("== path: '", path, "'");
-    const isMain = (path === "/");
+    const path = pathPrefix + usePathname() ?? "";
+    const isMain = (path === mainPath);
 
 
     const [isScrolled, setIsScrolled] = React.useState(false);
 
     React.useEffect(() => {
-        console.log("== isMain: ", isMain)
         if (isMain) {
             const handleScroll = () => {
                 setIsScrolled(window.scrollY > 200); // Adjust the threshold as needed
             };
-
             window.addEventListener('scroll', handleScroll);
-            console.log("== added event listener")
             return () => {
                 window.removeEventListener('scroll', handleScroll);
-                console.log("== removed event listener")
             };
         }
     }, [isMain]);
@@ -61,8 +57,7 @@ export default function AppNavBar() {
 
 
                 {navLinks.map((item, index) => {
-                    const isActive = (path === "/" && item.link === "/") || (item.link !== "/" && path.startsWith(item.link));
-                    console.log("== link", item.link, "isActive: ", (path === "/" && item.link === "/"), (item.link !== "/" && path.startsWith(item.link)))
+                    const isActive = (isMain && item.link === mainPath) || (item.link !== mainPath && path.startsWith(item.link));
                     return (
                         <NavbarItem key={`${item.name}-${index}`} className="flex">
                             <div className="w-4"/>
@@ -95,7 +90,7 @@ export default function AppNavBar() {
 
             <NavbarMenu>
                 {navLinks.map((item, index) => {
-                    const isActive = (path === "/" && item.link === "/") || (item.link !== "/" && path.startsWith(item.link));
+                    const isActive = (isMain && item.link === mainPath) || (item.link !== mainPath && path.startsWith(item.link));
                     return (
                         <NavbarMenuItem key={`${item.name}-${index}`}>
                             <Link
