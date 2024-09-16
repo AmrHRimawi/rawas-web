@@ -1,4 +1,4 @@
-import Projects from "@/pages/Projects";
+import Projects from "@/components/pages/Projects";
 import React from "react";
 
 export default function ProjectsPage() {

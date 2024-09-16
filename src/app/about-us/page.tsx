@@ -1,5 +1,5 @@
-import AboutUs from "@/pages/AboutUs";
-import ContactUs from "@/pages/ContactUs";
+import AboutUs from "@/components/pages/AboutUs";
+import ContactUs from "@/components/pages/ContactUs";
 
 export default function AboutUsPage() {
     return (

@@ -1,4 +1,4 @@
-import Consultants from "@/pages/Consultants";
+import Consultants from "@/components/pages/Consultants";
 
 export default function ConsultantsPage() {
     return (

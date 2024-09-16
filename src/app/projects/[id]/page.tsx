@@ -1,4 +1,4 @@
-import Project from '@/pages/Project';
+import Project from '@/components/pages/Project';
 
 interface ProjectPageProps {
     params: {

@@ -1,4 +1,4 @@
-import Suppliers from "@/pages/Suppliers";
+import Suppliers from "@/components/pages/Suppliers";
 
 export default function App() {
     return (
