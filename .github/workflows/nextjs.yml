@@ -91,3 +91,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          env:
+            SMTP_USER: ${{ secrets.SMTP_USER }}
+            SMTP_PASS: ${{ secrets.SMTP_PASS }}
+            SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+            SALES_EMAIL: ${{ secrets.SALES_EMAIL }}
