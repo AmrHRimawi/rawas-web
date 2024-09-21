@@ -22,6 +22,10 @@
     }
 }
 
+html {
+    background: linear-gradient(to right, #03615F20, white, #03615F20);
+}
+
 body {
     direction: rtl;
     font-weight: 300;
