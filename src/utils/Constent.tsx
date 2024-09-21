@@ -7,9 +7,9 @@ export const navLinks = [
     {name: "الرئيسية", link: `${pathPrefix}/`},
     {name: "عن رواس", link: `${pathPrefix}/about-us`},
     {name: "مشاريعنا", link: `${pathPrefix}/projects`},
-    {name: "مستشاري رواس", link: `${pathPrefix}/consultants`},
-    {name: "موردي رواس", link: `${pathPrefix}/suppliers`},
-    {name: "مقالات وأخبار", link: `${pathPrefix}/blogs`},
+    // {name: "مستشاري رواس", link: `${pathPrefix}/consultants`},
+    // {name: "موردي رواس", link: `${pathPrefix}/suppliers`},
+    // {name: "مقالات وأخبار", link: `${pathPrefix}/blogs`},
     {name: "تواصل معنا", link: `${pathPrefix}/contact-us`},
 ];
 
@@ -19,7 +19,7 @@ export const socials = (isColored: boolean = false) => {
             name: "Facebook",
             color: "#3b5998",
             src: `${pathPrefix}/icons/facebook.svg`,
-            link: "https://www.facebook.com/rawasps?mibextid=ZbWKwL",
+            link: "https://www.facebook.com/rawasps",
         },
         {
             name: "Telegram",
@@ -48,6 +48,32 @@ export const socials = (isColored: boolean = false) => {
     ]
 };
 
+export const socialsContact = [
+    {
+        name: "LinkedIn",
+        src: `${pathPrefix}/icons/linkedin.svg`,
+        color: "#0077b5",
+        link: "https://www.linkedin.com/company/%D8%B1%D9%88%D8%A7%D8%B3-%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A/"
+    },
+    {
+        name: "Instagram",
+        src: `${pathPrefix}/icons/instagram.svg`,
+        color: "#e4405f",
+        link: "https://www.instagram.com/rawas.ps/"
+    },
+    {
+        name: "WhatsApp",
+        src: `${pathPrefix}/icons/whatsapp.svg`,
+        color: "#43a884",
+        link: "https://wa.me/message/JYIXQMJMI4ZED1"
+    },
+    {
+        name: "Messenger",
+        src: `${pathPrefix}/icons/messenger.svg`,
+        color: "#0084ff",
+        link: "https://www.facebook.com/rawasps"
+    },
+];
 
 export const primary: ColorScale = {
     50: '#049B98',

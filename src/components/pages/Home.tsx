@@ -14,9 +14,11 @@ export default function Home() {
     return (<div>
         <section className="header-section flex flex-col justify-between items-end p-10 lg:p-20">
 
-            <Button className="w-full lg:w-72 text-xl shadow-xl mt-32 lg:mt-1" color="primary" endContent={<CalendarBoldIcon/>}>
+            <Button className="w-full lg:w-72 text-xl shadow-xl mt-32 lg:mt-1" color="primary" endContent={<CalendarBoldIcon/>} href="https://calendly.com/jrawas2024/30min"
+                    as={Link}>
                 احجز موعد ألأن
             </Button>
+
             <div/>
             <div className="flex flex-col items-center w-1/2">
                 <MotionUpDiv className="text-white text-5xl md:text-7xl lg:text-9xl font-bold m-1  drop-shadow-xl">رواس</MotionUpDiv>

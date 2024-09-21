@@ -20,7 +20,7 @@ export default function Projects() {
                         <p className="bg-secondary text-secondary-foreground text-xl lg:text-2xl p-3 pe-6 lg:me-4 w-2/3">رام الله، حي الكرمل مقابل مبنى تلفزيون فلسطين `&rdquo;برج
                             مشعل&ldquo;</p>
                     </div>
-                    <Image src={pathPrefix + "/images/real-estate-web-banner.jpg"} alt="project image" width={550} height={520}/>
+                    <Image src={pathPrefix + "/images/real-estate-web-banner.jpeg"} alt="project image" width={550} height={520}/>
                 </MotionUpDiv>
 
                 <MotionUpDiv className="w-full flex justify-center">
