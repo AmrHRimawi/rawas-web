@@ -12,6 +12,7 @@ import SourceIconLink from "@/components/SourceIconLink";
 import {AppLineSep} from "@/components/AppLineSep";
 import {pathPrefix, socialsContact} from "@/utils/Constent";
 import {FieldErrMsg} from "@/components/FieldErrMsg";
+import axios from "axios";
 
 
 const ContactUs = () => {
@@ -80,6 +81,7 @@ const ContactUs = () => {
         return isValid;
     };
 
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!validateForm()) return;
@@ -89,19 +91,23 @@ const ContactUs = () => {
         const message = Object.entries(formData).map(([key, value]) => `${key}: ${value}`).join('\n');
 
         try {
-            const response = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({subject, email, message})
+            const response = await axios.post('/api/send-email', {
+                subject,
+                email,
+                message
             });
 
-            if (response.ok) {
+            if (response.status === 200) {
                 toast.success('تم إرسال البريد الإلكتروني بنجاح');
             } else {
                 toast.error('فشل في إرسال البريد الإلكتروني');
             }
+            // const sent = await sendEmail(subject, email, message);
+            // if (sent) {
+            //     toast.success('تم إرسال البريد الإلكتروني بنجاح');
+            // } else {
+            //     toast.error('فشل في إرسال البريد الإلكتروني');
+            // }
         } catch (error) {
             toast.error('فشل في إرسال البريد الإلكتروني');
         }
