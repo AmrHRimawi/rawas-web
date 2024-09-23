@@ -1,6 +1,5 @@
 import React from "react";
 import ImageSlider from "@/components/ImageSlider";
-import Carousel from "@/components/Carousel";
 import MotionUpDiv from "@/components/MotionUpDiv";
 import AppTitle from "@/components/AppTitle";
 import SourceIconText from "@/components/SourceIconText";
@@ -9,6 +8,7 @@ import {AppLineSep} from "@/components/AppLineSep";
 import AppTitle3 from "@/components/AppTitle3";
 import MotionEndDiv from "@/components/MotionEndDiv";
 import {pathPrefix} from "@/utils/Constent";
+import ImageGallery from "@/components/ImageGallery";
 
 interface ProjectProps {
     id?: string
@@ -95,7 +95,7 @@ export default function Project({id}: ProjectProps) {
                 <div className="h-12"/>
 
                 <MotionUpDiv className="w-full flex justify-center">
-                    <Button href="/projects/1" as={Link} className="mt-5 p-6 lg:w-1/2 text-xl" color="primary">للاستفسار تواصل معنا</Button>
+                    <Button href={`${pathPrefix}/contact-us`} as={Link} className="mt-5 p-6 lg:w-1/2 text-xl" color="primary">للاستفسار تواصل معنا</Button>
                 </MotionUpDiv>
                 <div className="h-12"/>
 
@@ -105,9 +105,15 @@ export default function Project({id}: ProjectProps) {
 
 
                 <div className="h-24"/>
-
-                <MotionUpDiv className="flex justify-center items-center" viewportAmount={0.2}><Carousel images={project.lookImages}/></MotionUpDiv>
+                <MotionUpDiv className="w-full flex flex-col justify-center items-center" viewportAmount={0.2}>
+                    <p className="text-xl lg:text-2xl">اضغط على الصورة لتظهر بخاصية 360</p>
+                    <div className="h-8"/>
+                    <ImageGallery images={project.lookImages}/>
+                </MotionUpDiv>
                 <div className="h-24"/>
+
+                {/*<MotionUpDiv className="flex justify-center items-center" viewportAmount={0.2}><Carousel images={project.lookImages}/></MotionUpDiv>*/}
+                {/*<div className="h-24"/>*/}
 
                 <AppTitle3 text="موقع المشروع على الخريطة"/>
                 <div className="h-8"/>
