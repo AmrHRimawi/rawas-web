@@ -1,7 +1,7 @@
 import {ColorScale} from "@nextui-org/react";
 
-export const pathPrefix = "/rawas-web";
-// export const pathPrefix = "";
+// export const pathPrefix = "/rawas-web";
+export const pathPrefix = "";
 
 export const navLinks = [
     {name: "الرئيسية", link: `${pathPrefix}/`},

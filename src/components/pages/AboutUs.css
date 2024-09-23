@@ -1,5 +1,6 @@
 .about-us-header-section {
-    background-image: url('/rawas-web/images/real-estate-web-banner.jpeg');
+    /*background-image: url('/rawas-web/images/real-estate-web-banner.jpeg');*/
+    background-image: url('/images/real-estate-web-banner.jpeg');
     background-position: center;
     background-blend-mode: overlay;
     background-size: cover;
