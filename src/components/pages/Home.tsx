@@ -37,8 +37,9 @@ export default function Home() {
 
 
             <Projects/>
+            <div className="border-b-secondary border-1 w-2/3 m-auto"/>
 
-            <Button href={pathPrefix + "/projects"} as={Link} className="my-5 p-6 w-1/4 text-xl" color="primary">
+            <Button href={pathPrefix + "/projects"} as={Link} className="my-5 p-6 lg:w-1/4 lg:text-xl" color="primary">
                 لمشاهدة المزيد
             </Button>
 

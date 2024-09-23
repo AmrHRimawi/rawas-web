@@ -23,13 +23,25 @@
 }
 
 html {
-    background: linear-gradient(to right, #03615F20, white, #03615F20);
+    background: linear-gradient(to right, #03615F15, white, #03615F15);
 }
 
 body {
     direction: rtl;
     font-weight: 300;
     font-size: 15pt;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 13pt;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12pt;
+    }
 }
 
 @layer utilities {

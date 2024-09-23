@@ -13,18 +13,19 @@ export default function Projects() {
             <div className="h-24"/>
 
             {/*Project card*/}
-            <div className="w-5/12">
+            <div className="max-w-[500px]">
                 <MotionUpDiv viewportAmount={0.2}>
                     <div className="absolute translate-y-12">
-                        <p className="bg-primary text-primary-foreground p-3 text-2xl lg:text-3xl w-fit ">مشروع رواس</p>
-                        <p className="bg-secondary text-secondary-foreground text-xl lg:text-2xl p-3 pe-6 lg:me-4 w-2/3">رام الله، حي الكرمل مقابل مبنى تلفزيون فلسطين `&rdquo;برج
+                        <p className="bg-primary text-primary-foreground p-2 text-lg md:text-2xl lg:text-3xl w-fit ">مشروع رواس</p>
+                        <p className="bg-secondary text-secondary-foreground text-sm md:text-xl lg:text-2xl p-2 pe-6 lg:me-4 w-2/3">رام الله، حي الكرمل مقابل مبنى تلفزيون فلسطين
+                            `&rdquo;برج
                             مشعل&ldquo;</p>
                     </div>
                     <Image src={pathPrefix + "/images/real-estate-web-banner.jpeg"} alt="project image" width={550} height={520}/>
                 </MotionUpDiv>
 
                 <MotionUpDiv className="w-full flex justify-center">
-                    <Button href={pathPrefix + "/projects/1"} as={Link} className="mt-5 p-6 w-2/3 text-xl" color="primary">
+                    <Button href={pathPrefix + "/projects/1"} as={Link} className="mt-5 p-6 lg:w-2/3 lg:text-xl" color="primary">
                         لمشاهدة التفاصيل
                     </Button>
                 </MotionUpDiv>

@@ -121,13 +121,13 @@ const ContactUs = () => {
             <br/>
             <div className="flex flex-col justify-center items-center">
                 <MotionUpDiv className="lg:w-8/12 w-fit pt-4 pb-2 px-3 text-2xl flex flex-col lg:flex-row justify-evenly items-center bg-foreground-100 shadow-lg rounded-lg">
-                    <Link href="tel:0593330060" className="text-2xl text-foreground">
+                    <Link href="tel:0593330060" className="text-xl md:text-2xl text-foreground">
                         <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">0593330060</SourceIconText>
                     </Link>
-                    <Link href="tel:0593330066" className="text-2xl text-foreground">
+                    <Link href="tel:0593330066" className="text-xl md:text-2xl text-foreground">
                         <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">0593330060</SourceIconText>
                     </Link>
-                    <Link href="tel:022422766" className="text-2xl text-foreground">
+                    <Link href="tel:022422766" className="text-xl md:text-2xl text-foreground">
                         <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">022422766</SourceIconText>
                     </Link>
                 </MotionUpDiv>
@@ -163,7 +163,7 @@ const ContactUs = () => {
                             <div className="h-4"/>
                         </MotionUpDiv>
                         <MotionUpDiv>
-                            <Button type="submit" name="send" className="mt-5 p-6 w-full text-xl" color="primary">إرسال</Button>
+                            <Button type="submit" name="send" className="mt-5 p-6 w-full md:text-xl" color="primary">إرسال</Button>
                         </MotionUpDiv>
                     </form>
                 </div>

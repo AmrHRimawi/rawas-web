@@ -65,7 +65,7 @@ export default function Project({id}: ProjectProps) {
     const {images} = project;
     console.log("project id: ", id);
     return (
-        <section className="w-full p-6 lg:p-14">
+        <section className="w-full p-1 md:p-6 lg:p-14">
 
             <MotionUpDiv><AppTitle text="واس جيت" prefix="ر"/></MotionUpDiv>
             <div className="h-24"/>
@@ -75,7 +75,7 @@ export default function Project({id}: ProjectProps) {
                 {/*<h1>{data?.name}</h1>*/}
                 {/*<p>{data?.description}</p>*/}
 
-                <MotionUpDiv className="w-5/6" viewportAmount={0.2}><ImageSlider images={images}/></MotionUpDiv>
+                <MotionUpDiv className="w-full lg:w-5/6" viewportAmount={0.2}><ImageSlider images={images}/></MotionUpDiv>
                 <div className="h-12"/>
 
 
@@ -88,9 +88,9 @@ export default function Project({id}: ProjectProps) {
 
                 </div>
                 <div className="h-12"/>
-                <MotionUpDiv className="w-5/6" viewportAmount={0.2}>
+                <MotionUpDiv className="w-11/12 md:w-5/6" viewportAmount={0.2}>
                     <h2 className="text-2xl font-medium bg-primary w-fit p-4 rounded-lg translate-y-8 -translate-x-12 text-primary-foreground">نبذه عن المشروع :</h2>
-                    <p className="bg-foreground-100 rounded-2xl ps-14 pt-14 pb-8 pe-4">{project.about}</p>
+                    <p className="bg-foreground-100 rounded-2xl md:ps-14 pt-14 pb-8 md:pe-4">{project.about}</p>
                 </MotionUpDiv>
                 <div className="h-12"/>
 

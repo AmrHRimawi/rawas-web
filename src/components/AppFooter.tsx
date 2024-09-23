@@ -86,7 +86,7 @@ export default function AppFooter() {
                     </div>
 
                 </div>
-                <div className="flex justify-start p-3 w-full border-t-1 mt-4">
+                <div className="flex justify-start p-1 lg:p-3 w-full border-t-1 mt-4">
                     <p>حقوق الطبع والنشر 2024 © جميع الحقوق محفوظة التصميم بواسطة رواس</p>
                 </div>
             </div>
