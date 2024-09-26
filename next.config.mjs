@@ -3,9 +3,9 @@ const nextConfig = {
     // output: "export",
     // basePath: "/rawas-web",
     // assetPrefix: "/rawas-web/",
-    images: {
-        unoptimized: true,
-    }
+    // images: {
+    //     unoptimized: true,
+    // }
 };
 
 export default nextConfig;
