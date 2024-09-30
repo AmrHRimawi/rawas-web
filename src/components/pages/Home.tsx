@@ -6,7 +6,9 @@ import ContactUs from "@/components/pages/ContactUs";
 import Projects from "@/components/pages/Projects";
 import ArrowDown from "@/components/ArrowDown";
 import MotionUpDiv from "@/components/MotionUpDiv";
+import TypeWriter from "@/components/TypeWriter";
 import {pathPrefix} from "@/utils/Constent";
+import TypeWriterList from "@/components/pages/TypeWriterList";
 
 export default function Home() {
 
@@ -20,13 +22,28 @@ export default function Home() {
             </Button>
 
             <div/>
-            <div className="flex flex-col items-center w-1/2">
-                <MotionUpDiv className="text-white text-5xl md:text-7xl lg:text-9xl font-bold m-1  drop-shadow-xl">رواس</MotionUpDiv>
+            <div className="flex flex-col items-center w-3/4 md:w-1/2">
+                <div className="w-full flex justify-end">
+                    <MotionUpDiv className="text-white bg-secondary text-xl md:text-2xl lg:text-3xl pt-2  drop-shadow-xl">
+                        <TypeWriterList startDelay={5500} strings={[
+                            'الكفاءة والاختصاص',
+                            'الامانة والتجرد',
+                            'الشفافية',
+                            'الاستدامة والابتكار',
+                            'التكيف لتبلبة رغبة العملاء',
+                            'التوعية والثقافة',
+                            'العمل المجتمعي',
+                        ]}/></MotionUpDiv>
+                </div>
+                <MotionUpDiv className="text-white text-5xl md:text-7xl lg:text-9xl font-bold m-1  drop-shadow-xl"><TypeWriter>رواس</TypeWriter></MotionUpDiv>
                 <div className="flex flex-col items-center relative w-full">
-                    <MotionUpDiv className="text-white text-4xl md:text-6xl lg:text-8xl m-1 drop-shadow-xl adam-script-font absolute top-0">أينما حلّت.. حياة</MotionUpDiv>
+                    <MotionUpDiv className="text-white text-4xl md:text-6xl lg:text-8xl m-1 drop-shadow-xl adam-script-font absolute top-0">
+                        <TypeWriter startDelay={2000}>أينما حلّت.. حياة</TypeWriter>
+                    </MotionUpDiv>
                     <MotionUpDiv className="w-full h-4 bg-secondary text-secondary drop-shadow-xl absolute top-6 md:top-10 lg:top-16 -z-10">--</MotionUpDiv>
                 </div>
             </div>
+
             <div className="w-full h-12 flex justify-center text-background drop-shadow-2xl">
                 <ArrowDown/>
                 <ArrowDown/>
