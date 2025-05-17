@@ -4,7 +4,7 @@ import "./globals.css";
 import AppNavBar from "@/components/AppNavBar";
 import {NextUIProvider} from "@nextui-org/react";
 import AppFooter from "@/components/AppFooter";
-import {appMetadata, localBusinessJsonLd, title} from "@/utils/appMetadata";
+import {appMetadata, localBusinessJsonLd, title} from "@/utils/MetadataUtil";
 
 const font = Tajawal({subsets: ['arabic', 'latin'], weight: ['200', '300', '400', '500', '700', '800', '900']});
 export const metadata = appMetadata;

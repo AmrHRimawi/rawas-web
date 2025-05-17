@@ -1,4 +1,7 @@
 import ContactUs from "@/components/pages/ContactUs";
+import {contactUsMetadata} from "@/utils/MetadataUtil";
+
+export const metadata = contactUsMetadata;
 
 export default function ContactUsPage() {
     return (
