@@ -1,0 +1,16 @@
+# Allow all crawlers by default
+User-agent: *
+Allow: /
+
+# Block specific paths
+Disallow: /admin/
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap
+Sitemap: https://rawas.ps/sitemap.xml
