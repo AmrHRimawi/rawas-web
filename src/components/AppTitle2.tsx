@@ -8,10 +8,10 @@ interface AppTitleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTM
 
 const AppTitle2: React.FC<AppTitleProps> = ({text = "", className, ...props}) => {
     return (<MotionEndDiv className="w-full">
-        <div className={"text-xl md:text-2xl lg:text-3xl  my-4 " + className} {...props}>
+        <h2 className={"text-xl md:text-2xl lg:text-3xl  my-4 " + className} {...props}>
             <span className="border-b-4 border-secondary text-foreground">{text}</span>
             <span className="border-b-4 border-secondary border-dotted text-background"> ..</span>
-        </div>
+        </h2>
     </MotionEndDiv>)
 }
 export default AppTitle2;
