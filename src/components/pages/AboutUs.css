@@ -9,6 +9,24 @@
     transform: translate(0px, -4rem);
 }
 
+@media (max-width: 1024px) {
+    .about-us-header-section {
+        background-image: url('/images/real-estate-web-banner-medium.jpeg');
+    }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+    .about-us-header-section {
+        background-image: url('/images/real-estate-web-banner-portrait.jpeg');
+    }
+}
+
+@media (max-width: 750px) and (orientation: portrait) {
+    .about-us-header-section {
+        background-image: url('/images/real-estate-web-banner-portrait-medium.jpeg');
+    }
+}
+
 .about-us-header-section::before {
     content: '';
     position: absolute;

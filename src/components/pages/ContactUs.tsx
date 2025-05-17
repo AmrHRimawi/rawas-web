@@ -86,7 +86,7 @@ const ContactUs = () => {
         e.preventDefault();
         if (!validateForm()) return;
 
-        const {name, email, ...rest} = formData;
+        const {name, email} = formData;
         const subject = `${name} wants to contact`;
         const message = Object.entries(formData).map(([key, value]) => `${key}: ${value}`).join('\n');
 
@@ -102,14 +102,9 @@ const ContactUs = () => {
             } else {
                 toast.error('فشل في إرسال البريد الإلكتروني');
             }
-            // const sent = await sendEmail(subject, email, message);
-            // if (sent) {
-            //     toast.success('تم إرسال البريد الإلكتروني بنجاح');
-            // } else {
-            //     toast.error('فشل في إرسال البريد الإلكتروني');
-            // }
         } catch (error) {
             toast.error('فشل في إرسال البريد الإلكتروني');
+            console.log(`Exception while send email: ${error}`);
         }
     };
 

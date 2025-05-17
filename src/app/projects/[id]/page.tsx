@@ -1,4 +1,5 @@
 import Project from '@/components/pages/Project';
+import {projectMetadata} from '@/utils/MetadataUtil';
 
 interface ProjectPageProps {
     params: {
@@ -8,13 +9,17 @@ interface ProjectPageProps {
 
 const ProjectPage = ({params}: ProjectPageProps) => {
     const {id} = params;
-    
+
     return (
         <div className="w-full flex flex-col justify-center items-center">
             <Project id={id}/>
         </div>
     );
 };
+
+export async function generateMetadata({params}: { params: { id: string } }) {
+    return projectMetadata(params.id);
+}
 
 export const generateStaticParams = async () => {
     // Fetch the list of project IDs from your data source
@@ -27,3 +32,4 @@ export const generateStaticParams = async () => {
 };
 
 export default ProjectPage;
+

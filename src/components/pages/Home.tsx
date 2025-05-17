@@ -35,7 +35,7 @@ export default function Home() {
                             'العمل المجتمعي',
                         ]}/></MotionUpDiv>
                 </div>
-                <MotionUpDiv className="text-white text-5xl md:text-7xl lg:text-9xl font-bold m-1  drop-shadow-xl"><TypeWriter>رواس</TypeWriter></MotionUpDiv>
+                <MotionUpDiv className="text-white text-5xl md:text-7xl lg:text-9xl font-bold m-1  drop-shadow-xl"><h1><TypeWriter>رواس</TypeWriter></h1></MotionUpDiv>
                 <div className="flex flex-col items-center relative w-full">
                     <MotionUpDiv className="text-white text-4xl md:text-6xl lg:text-8xl m-1 drop-shadow-xl adam-script-font absolute top-0">
                         <TypeWriter startDelay={2000}>أينما حلّت.. حياة</TypeWriter>

@@ -1,4 +1,7 @@
 import Consultants from "@/components/pages/Consultants";
+import {consultantsMetadata} from "@/utils/MetadataUtil";
+
+export const metadata = consultantsMetadata;
 
 export default function ConsultantsPage() {
     return (
