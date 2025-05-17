@@ -11,7 +11,7 @@ const mainPath = `${pathPrefix}/`;
 export default function AppNavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-    const path = pathPrefix + usePathname() ?? "";
+    const path = pathPrefix + (usePathname() ?? "");
     const isMain = (path === mainPath);
 
 

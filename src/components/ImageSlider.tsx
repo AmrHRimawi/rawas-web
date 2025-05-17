@@ -39,7 +39,7 @@ export default function ImageSlider({images, className, ...props}: Readonly<Imag
         if (!isHovered) {
             const interval = setInterval(nextSlide, 3000);
 
-            // Cleanup the interval on component unmount
+            // Clean up the interval on a component unmount
             return () => {
                 clearInterval(interval);
             };
@@ -86,7 +86,7 @@ export default function ImageSlider({images, className, ...props}: Readonly<Imag
             <div className="flex justify-center mt-4">
                 {images.map((_, index) => (
                     <div
-                        key={index}
+                        key={"i:" + index}
                         className={`h-1 w-10 mx-1 ${
                             index === currentIndex
                                 ? "bg-primary rounded-xl"

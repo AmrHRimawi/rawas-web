@@ -206,7 +206,7 @@ export default function AboutUs() {
                     <div>
                         <div className="w-full flex flex-wrap justify-around">
                             {rawasWorkPillars.map((pillar, i) => (
-                                <MotionUpDiv key={i} className="rounded-4xl pt-4 text-primary-foreground leading-tight">
+                                <MotionUpDiv key={"i:" + i} className="rounded-4xl pt-4 text-primary-foreground leading-tight">
                                     <div className="relative bg-primary rounded-full px-8 py-14 text-center w-72 h-72 flex items-center justify-center">
                                         <div className="absolute -top-1.5 right-3.5 bg-secondary rounded-full w-21 h-21 flex items-center justify-center">
                                             <p className="text-secondary-foreground text-4xl font-bold mt-2">{i + 1}</p>
@@ -228,7 +228,7 @@ export default function AboutUs() {
                     <div className="h-16"/>
                     <div className="w-full flex flex-wrap justify-around">
                         {rawasValues.map((value, i) => (
-                            <MotionUpDiv key={i} viewportAmount={0.5} className="relative rounded-4xl p-4 mb-12 max-w-124">
+                            <MotionUpDiv key={"i:" + i} viewportAmount={0.5} className="relative rounded-4xl p-4 mb-12 max-w-124">
                                 <div
                                     className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background border-5 border-secondary rounded-full w-24 h-24 flex items-center justify-center">
                                     <p className="text-secondary text-4xl font-bold">{i + 1}</p>

@@ -27,7 +27,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({images}) => {
         <div>
             <div className="flex flex-wrap gap-3 justify-center">
                 {images.map((image, index) => (
-                    <div key={index} onClick={() => openModal(image.src)} className="cursor-pointer">
+                    <div key={"i:" + index} onClick={() => openModal(image.src)} className="cursor-pointer">
                         <Image src={image.src} alt={`Image ${index + 1}`} width={400} height={150}/>
                         <p className="text-center">{image.title}</p>
                     </div>
