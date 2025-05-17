@@ -52,7 +52,7 @@ export default function AppNavBar() {
 
             <NavbarContent className="hidden lg:flex gap-4" justify="center">
                 <NavbarBrand>
-                    <AppLogo/>
+                    <Link href={navLinks[0].link}><AppLogo/></Link>
                 </NavbarBrand>
 
 
