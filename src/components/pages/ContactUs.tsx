@@ -72,7 +72,7 @@ const ContactUs = () => {
         } else {
             const phoneRegex = /^\+?[0٠]{0,2}[0-9٠-٩]{9,14}$/;
             if (!phoneRegex.test(phone)) {
-                newErrors.phone = 'تنسيق الهاتف المحمول غير صالح';
+                newErrors.phone = 'pتنسيق الهاتف المحمول غير صالح';
                 isValid = false;
             }
         }

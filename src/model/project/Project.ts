@@ -1,6 +1,9 @@
-import {ProjectType} from "@/model/project/ProjectType";
+import { projects } from "@/data/projects";
+
+import { ProjectType } from "./ProjectType";
 
 export type Project = {
+    bannerImage: string;
     id: number;
     name: string;
     description: string;
@@ -14,22 +17,21 @@ export type Project = {
     map: { src: string };
 };
 
-export type ProjectLight = {
-    id: number;
-    name: string;
-    description: string;
-    type: ProjectType;
-    image: string;
-    link: string;
-};
+export interface ProjectLight {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  link: string;
+}
 
 export function mapProjectToLight(project: Project): ProjectLight {
-    return {
-        id: project.id,
-        name: project.name,
-        description: project.description,
-        type: project.type,
-        image: project.image,
-        link: project.link,
-    };
+  return {
+    id: project.id.toString(),
+    name: project.name,
+    description: project.description,
+    //type: ProjectType;
+    image: project.image,
+    link: project.link,
+  };
 }
