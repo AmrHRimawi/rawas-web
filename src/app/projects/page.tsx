@@ -1,4 +1,4 @@
-import Projects from "@/components/pages/Projects";
+import Projects from "@/components/pages/project/Projects";
 import {projectsMetadata} from "@/utils/MetadataUtil";
 import React from "react";
 

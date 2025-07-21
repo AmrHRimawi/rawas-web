@@ -3,7 +3,7 @@ import {CalendarBoldIcon} from "@nextui-org/shared-icons";
 import "./Home.css";
 import React from "react";
 import ContactUs from "@/components/pages/ContactUs";
-import Projects from "@/components/pages/Projects";
+import Projects from "@/components/pages/project/Projects";
 import ArrowDown from "@/components/ArrowDown";
 import MotionUpDiv from "@/components/MotionUpDiv";
 import TypeWriter from "@/components/TypeWriter";
