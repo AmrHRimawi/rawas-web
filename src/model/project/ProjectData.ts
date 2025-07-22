@@ -55,8 +55,8 @@ const projects: Record<number, Project> = {
         ],
         map: {src: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1902.868659040583!2d35.20212806400692!3d31.912098375793555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDU0JzQzLjYiTiAzNcKwMTInMTAuNSJF!5e1!3m2!1sen!2suk!4v1724510930866!5m2!1sen!2suk"},
     },
+ 
 
-    // ToDo: Update the info of project 2
     2: {
         id: 2,
         name: "مشروع رواس هوم",
@@ -73,11 +73,11 @@ const projects: Record<number, Project> = {
       { src: `${pathPrefix}/images/projects/2/pic/m.jpeg` },
     ],
         properties: [
-            {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "نوع المشروع", text: "عمارة سكني"},
-            {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "الموقع", text: "مدينة البيرة خلف حديقة الاستقلال"},
+            {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "نوع المشروع", text: "عمارة سكنية"},
+            {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "الموقع", text: "مدينة البيرة، خلف حديقة الاستقلال، جانب فيلا بشار المصري"},
             {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "المساحة الطابقية", text: "437 متر مربع"},
             {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "عدد الطوابق", text: 
-            "7 طوابق .3 طوابق متكررة التقسيم, بالاضافة الى الطابق الارضي الذي يحتوي على شقتين, كل شقة لها حديقة خارجية خاصة, وطابق الروف الذي يحتوي على شقتين, كل شقة لها تراس خاص وطابق مواقف"},
+            "7 طوابق .3 طوابق متكررة، بالإضافةإلى الطابق الأرضي الذي يحتوي على شقتين، كل شقة لها حديقة خارجية خاصة، وطابق الروف الذي يحتوي على شقتين، كل شقة لها تراس خاص وطابق مواقف"},
             {
                 src: `${pathPrefix}/icons/office.svg`,
                 alt: "residential",
