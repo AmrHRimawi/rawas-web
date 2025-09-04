@@ -5,6 +5,7 @@ import {motion, type PanInfo, useMotionValue, useSpring} from "framer-motion"
 import {ChevronLeft, ChevronRight} from "lucide-react"
 import {cn} from "@/utils/TailwindUtil"
 import Image from "next/image"
+import LazyImage from './LazyImage';
 
 const START_INDEX = 0
 const DRAG_THRESHOLD = 150
@@ -150,13 +151,13 @@ export default function Carousel({images, className, isRTL = true, ...props}: Re
                         transition={{ease: "easeInOut", duration: 0.4}}
                         style={{flexBasis: active ? "60%" : "20%"}}
                     >
-                        <Image
+                        <LazyImage
                             src={img.src}
                             width={900}
                             height={300}
                             alt={img.title ?? `Image ${index}`}
+                            priority={active} // Priority loading for active slide
                             className={cn("grid place-content-center overflow-hidden rounded-lg bg-gray-900", active ? "aspect-[5/3]" : "aspect-[4/3]")}
-                            draggable={false}
                             onClick={disableDragClick}
                         />
                         <div className={cn("mt-4 flex justify-center", !active && "hidden")}>
