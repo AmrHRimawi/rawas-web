@@ -1,6 +1,7 @@
 
 .icon-container {
     display: inline-block;
+    position: relative;
 }
 
 .icon-container a {
@@ -14,6 +15,8 @@
     justify-content: center;
     line-height: 1;
     border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .icon-container a::before {
@@ -39,4 +42,19 @@
 
 .icon-container a:hover img {
     filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+
+.icon-container a:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.icon-container a:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.icon-container a:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(200, 178, 117, 0.6);
 }
