@@ -109,7 +109,7 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="w-5/6">
+        <section className="w-full p-6 lg:p-16">
             <ToastContainer position="top-left"/>
             <div className="h-24"/>
             <MotionUpDiv><AppTitle text="اصل معنا" prefix="تو"/></MotionUpDiv>

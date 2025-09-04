@@ -16,39 +16,45 @@ const ClientProviders: React.FC<ClientProvidersProps> = ({ children }) => {
             
             {/* SEO Dashboard - Only show in development */}
             {process.env.NODE_ENV === 'development' && (
-                <SEODashboard show={true} />
+                <SEODashboard show={false} />
             )}
-
 
             {/* Performance Dashboard - Only show in development */}
-            {process.env.NODE_ENV }
             {process.env.NODE_ENV === 'development' && (
-                <PerformanceDashboard show={true} />
+                <PerformanceDashboard show={false} />
             )}
         
-        {/* Performance Monitoring Script */}
+        {/* Simple Performance Monitoring Script */}
         <script
             dangerouslySetInnerHTML={{
                 __html: `
-                    // Initialize performance monitoring safely
+                    // Simple performance monitoring without external imports
                     if (typeof window !== 'undefined') {
                         window.addEventListener('load', () => {
-                            // Import performance monitoring dynamically
-                            import('/src/utils/PerformanceUtil.js').then(({ performanceMonitor }) => {
-                                // Log performance metrics after page load
-                                setTimeout(() => {
-                                    try {
-                                        const metrics = performanceMonitor.getMetrics();
-                                        const score = performanceMonitor.getPerformanceScore();
-                                        console.log('Final Performance Metrics:', metrics);
-                                        console.log('Performance Score:', score);
-                                    } catch (error) {
-                                        console.log('Performance monitoring not available:', error);
+                            setTimeout(() => {
+                                try {
+                                    // Basic performance metrics
+                                    const navigation = performance.getEntriesByType('navigation')[0];
+                                    if (navigation) {
+                                        const loadTime = navigation.loadEventEnd - navigation.loadEventStart;
+                                        const domContentLoaded = navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart;
+                                        
+                                        console.log('Page Load Time:', loadTime.toFixed(2), 'ms');
+                                        console.log('DOM Content Loaded:', domContentLoaded.toFixed(2), 'ms');
+                                        
+                                        // Log to analytics if available
+                                        if (typeof window !== 'undefined' && window.gtag) {
+                                            window.gtag('event', 'performance_metric', {
+                                                metric_name: 'page_load',
+                                                metric_value: loadTime,
+                                                metric_unit: 'ms'
+                                            });
+                                        }
                                     }
-                                }, 1000);
-                            }).catch(error => {
-                                console.log('Performance monitoring module not found:', error);
-                            });
+                                } catch (error) {
+                                    console.log('Performance monitoring not available:', error);
+                                }
+                            }, 1000);
                         });
                     }
                 `
