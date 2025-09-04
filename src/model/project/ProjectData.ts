@@ -60,7 +60,7 @@ const projects: Record<number, Project> = {
         id: 2,
         name: "مشروع رواس هوم",
         description: "المشروع السكني الأفخم في مدينة البيرة خلف حديقة الاستقلال",
-        type: ProjectTypes.OFFICE,
+        type: ProjectTypes.RESIDENTIAL,
         image: `${pathPrefix}/images/projects/2/thumb.jpeg`,
         link: `${pathPrefix}/projects/2`,
         images: [
