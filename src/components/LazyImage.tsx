@@ -77,7 +77,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
     }
 
     return (
-        <div ref={imageRef} className={className}>
+        <div ref={imageRef}>
             <Image
                 src={src}
                 alt={alt}
@@ -86,7 +86,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
                 priority={priority}
                 placeholder={placeholder}
                 blurDataURL={blurDataURL}
-                className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`${className} transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                 onClick={onClick}
                 onLoad={handleImageLoad}
             />
