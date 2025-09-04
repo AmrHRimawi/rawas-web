@@ -1,3 +1,5 @@
+"use client";
+
 import {Button, Link} from "@nextui-org/react";
 import {CalendarBoldIcon} from "@nextui-org/shared-icons";
 import "./Home.css";

@@ -2,11 +2,12 @@ import {pathPrefix} from "@/utils/Constent";
 import {ProjectTypes} from "@/model/project/ProjectType";
 import {mapProjectToLight, Project, ProjectLight} from "@/model/project/Project";
 
+// Optimize project data structure for better performance
 const projects: Record<number, Project> = {
     1: {
         id: 1,
         name: "مشروع رواس جيت",
-        description: "رام الله، حي الكرمل مقابل مبنى تلفزيون فلسطين `”برج مشعل“",
+        description: "رام الله، حي الكرمل مقابل مبنى تلفزيون فلسطين \"برج مشعل\"",
         type: ProjectTypes.OFFICE,
         image: `${pathPrefix}/images/projects/1/thumb.jpeg`,
         link: `${pathPrefix}/projects/1`,
@@ -51,33 +52,30 @@ const projects: Record<number, Project> = {
         }, {
             title: "المشهد من الطابق السادس",
             src: `${pathPrefix}/images/projects/1/view/6.jpeg`,
-        }
-        ],
+        }],
         map: {src: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1902.868659040583!2d35.20212806400692!3d31.912098375793555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDU0JzQzLjYiTiAzNcKwMTInMTAuNSJF!5e1!3m2!1sen!2suk!4v1724510930866!5m2!1sen!2suk"},
     },
- 
 
     2: {
         id: 2,
         name: "مشروع رواس هوم",
         description: "المشروع السكني الأفخم في مدينة البيرة خلف حديقة الاستقلال",
         type: ProjectTypes.OFFICE,
-         image: `${pathPrefix}/images/projects/2/thumb.jpeg`,
+        image: `${pathPrefix}/images/projects/2/thumb.jpeg`,
         link: `${pathPrefix}/projects/2`,
-       images: [
-      { src: `${pathPrefix}/images/projects/2/pic/1.jpg` },
-      { src: `${pathPrefix}/images/projects/2/pic/2.jpg` },
-      { src: `${pathPrefix}/images/projects/2/pic/3.jpg` },
-      { src: `${pathPrefix}/images/projects/2/pic/4.jpg` },
-      { src: `${pathPrefix}/images/projects/2/pic/5.jpg` },
-      { src: `${pathPrefix}/images/projects/2/pic/m.jpeg` },
-    ],
+        images: [
+            { src: `${pathPrefix}/images/projects/2/pic/1.jpg` },
+            { src: `${pathPrefix}/images/projects/2/pic/2.jpg` },
+            { src: `${pathPrefix}/images/projects/2/pic/3.jpg` },
+            { src: `${pathPrefix}/images/projects/2/pic/4.jpg` },
+            { src: `${pathPrefix}/images/projects/2/pic/5.jpg` },
+            { src: `${pathPrefix}/images/projects/2/pic/m.jpeg` },
+        ],
         properties: [
             {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "نوع المشروع", text: "عمارة سكنية"},
             {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "الموقع", text: "مدينة البيرة، خلف حديقة الاستقلال، جانب فيلا بشار المصري"},
             {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "المساحة الطابقية", text: "437 متر مربع"},
-            {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "عدد الطوابق", text: 
-            "7 طوابق .3 طوابق متكررة، بالإضافةإلى الطابق الأرضي الذي يحتوي على شقتين، كل شقة لها حديقة خارجية خاصة، وطابق الروف الذي يحتوي على شقتين، كل شقة لها تراس خاص وطابق مواقف"},
+            {src: `${pathPrefix}/icons/office.svg`, alt: "residential", title: "عدد الطوابق", text: "7 طوابق .3 طوابق متكررة، بالإضافةإلى الطابق الأرضي الذي يحتوي على شقتين، كل شقة لها حديقة خارجية خاصة، وطابق الروف الذي يحتوي على شقتين، كل شقة لها تراس خاص وطابق مواقف"},
             {
                 src: `${pathPrefix}/icons/office.svg`,
                 alt: "residential",
@@ -103,21 +101,21 @@ const projects: Record<number, Project> = {
         }, {
             title: "المشهد من الطابق الخامس",
             src: `${pathPrefix}/images/projects/2/view/5.jpeg`,
-        }, 
-        ],
+        }],
         map: {src: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3629.106687866234!2d35.20865083612953!3d31.918053408660043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDU1JzAzLjgiTiAzNcKwMTInMzkuMSJF!5e1!3m2!1sen!2suk!4v1747134296460!5m2!1sen!2suk"},
     },
-}
+};
 
 // Get a full project by id
-export function getProjectById(id: number) {
+export function getProjectById(id: number): Project | undefined {
     return projects[id];
 }
 
 // Get only id and name by id
-export function getLightProjectById(id: number) {
+export function getLightProjectById(id: number): ProjectLight | undefined {
     const project = projects[id];
     if (!project) return undefined;
+    
     return mapProjectToLight(project);
 }
 

@@ -1,3 +1,5 @@
+"use client";
+
 import {ProjectLight} from "@/model/project/Project";
 import React from "react";
 import MotionUpDiv from "@/components/MotionUpDiv";
