@@ -82,6 +82,8 @@ const ContactUs = () => {
     };
 
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!validateForm()) return;
@@ -91,6 +93,7 @@ const ContactUs = () => {
         const message = Object.entries(formData).map(([key, value]) => `${key}: ${value}`).join('\n');
 
         try {
+            setIsSubmitting(true);
             const response = await axios.post('/api/send-email', {
                 subject,
                 email,
@@ -105,76 +108,129 @@ const ContactUs = () => {
         } catch (error) {
             toast.error('فشل في إرسال البريد الإلكتروني');
             console.log(`Exception while send email: ${error}`);
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
     return (
-        <section className="w-full p-6 lg:p-16">
+        <section className="relative w-full p-6 lg:p-16">
+            <div className="absolute inset-0 pointer-events-none"></div>
             <ToastContainer position="top-left"/>
-            <div className="h-24"/>
-            <MotionUpDiv><AppTitle text="اصل معنا" prefix="تو"/></MotionUpDiv>
-            <br/>
-            <div className="flex flex-col justify-center items-center">
-                <MotionUpDiv className="lg:w-8/12 w-fit pt-4 pb-2 px-3 text-2xl flex flex-col lg:flex-row justify-evenly items-center bg-foreground-100 shadow-lg rounded-lg">
+            <div className="relative z-10">
+                <div className="h-24"/>
+                <MotionUpDiv><AppTitle text="اصل معنا" prefix="تو"/></MotionUpDiv>
+                <br/>
+                <div className="flex flex-col justify-center items-center space-y-8">
+                    <MotionUpDiv className="lg:w-8/12 w-fit pt-4 pb-2 px-4 text-2xl flex flex-col lg:flex-row justify-evenly items-center bg-background/50 backdrop-blur-md rounded-xl shadow ring-1 ring-white/10">
                     <Link href="tel:0593330060" className="text-xl md:text-2xl text-foreground">
                         <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">0593330060</SourceIconText>
                     </Link>
                     <Link href="tel:0593330066" className="text-xl md:text-2xl text-foreground">
-                        <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">0593330060</SourceIconText>
+                        <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">0593330066</SourceIconText>
                     </Link>
                     <Link href="tel:022422766" className="text-xl md:text-2xl text-foreground">
                         <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">022422766</SourceIconText>
                     </Link>
                 </MotionUpDiv>
 
-                <MotionUpDiv className="flex flex-col justify-center items-center text-center">
-                    <div className="h-8"/>
-                    <p>نسعى لتقديم تجربة مميزة وجديدة في قطاع العقار الفلسطيني</p>
-                    <div className="h-4"/>
-                    <p>ادخل بياناتك هنا ليتم التواصل معك بأقرب وقت</p>
-                </MotionUpDiv>
-                <div className="w-full lg:w-1/2 max-w-xl flex flex-col items-center">
-                    <form className="w-full" onSubmit={handleSubmit}>
+                    <MotionUpDiv className="flex flex-col justify-center items-center text-center space-y-4">
+                        <p>نسعى لتقديم تجربة مميزة وجديدة في قطاع العقار الفلسطيني</p>
+                        <p>ادخل بياناتك هنا ليتم التواصل معك بأقرب وقت</p>
+                    </MotionUpDiv>
+                    
+                    <div className="w-full lg:w-2/3 max-w-4xl">
                         <MotionUpDiv>
-                            <Input type="text" name="name" className="mt-5" label="الاسم" value={formData.name} onChange={handleChange}/>
-                            <FieldErrMsg msg={errors.name}/>
+                            <div className="bg-background/60 backdrop-blur-md rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 md:p-10">
+                                <form onSubmit={handleSubmit} aria-label="contact-form" className="space-y-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <Input 
+                                            type="text" 
+                                            name="name" 
+                                            label="الاسم" 
+                                            value={formData.name} 
+                                            onChange={handleChange} 
+                                            autoComplete="given-name"
+                                            variant="bordered"
+                                            radius="lg"
+                                            isInvalid={!!errors.name}
+                                            errorMessage={errors.name}
+                                        />
+                                        <Input 
+                                            type="text" 
+                                            name="family" 
+                                            label="العائلة" 
+                                            value={formData.family} 
+                                            onChange={handleChange} 
+                                            autoComplete="family-name"
+                                            variant="bordered"
+                                            radius="lg"
+                                            isInvalid={!!errors.family}
+                                            errorMessage={errors.family}
+                                        />
+                                        <Input 
+                                            type="email" 
+                                            name="email" 
+                                            label="البريد الالكتروني" 
+                                            value={formData.email} 
+                                            onChange={handleChange} 
+                                            autoComplete="email"
+                                            variant="bordered"
+                                            radius="lg"
+                                            isInvalid={!!errors.email}
+                                            errorMessage={errors.email}
+                                        />
+                                        <Input 
+                                            type="tel" 
+                                            name="phone" 
+                                            label="الهاتف المحمول" 
+                                            value={formData.phone} 
+                                            onChange={handleChange} 
+                                            autoComplete="tel"
+                                            inputMode="tel"
+                                            variant="bordered"
+                                            radius="lg"
+                                            isInvalid={!!errors.phone}
+                                            errorMessage={errors.phone}
+                                        />
+                                        <Textarea 
+                                            name="notes" 
+                                            label="الملاحظات" 
+                                            value={formData.notes} 
+                                            onChange={handleChange} 
+                                            autoComplete="off"
+                                            variant="bordered"
+                                            radius="lg"
+                                            className="md:col-span-2"
+                                        />
+                                    </div>
+                                    <Button 
+                                        type="submit" 
+                                        name="send" 
+                                        className="w-full p-6 md:text-xl hover:scale-[1.02] transition-transform" 
+                                        color="primary"
+                                        isLoading={isSubmitting} 
+                                        isDisabled={isSubmitting}
+                                    >
+                                        إرسال
+                                    </Button>
+                                </form>
+                            </div>
                         </MotionUpDiv>
-                        <MotionUpDiv>
-                            <Input type="text" name="family" className="mt-5" label="العائلة" value={formData.family} onChange={handleChange}/>
-                            <FieldErrMsg msg={errors.family}/>
-                        </MotionUpDiv>
-                        <MotionUpDiv>
-                            <Input type="email" name="email" className="mt-5" label="البريد الالكتروني" value={formData.email} onChange={handleChange}/>
-                            <FieldErrMsg msg={errors.email}/>
-                        </MotionUpDiv>
-                        <MotionUpDiv>
-                            <Input type="tel" name="phone" className="mt-5" label="الهاتف المحمول" value={formData.phone} onChange={handleChange}/>
-                            <FieldErrMsg msg={errors.phone}/>
-                        </MotionUpDiv>
-                        <MotionUpDiv>
-                            <Textarea name="notes" label="الملاحظات" className="mt-5" value={formData.notes} onChange={handleChange}/>
-                        </MotionUpDiv>
-                        <MotionUpDiv>
-                            <div className="h-4"/>
-                        </MotionUpDiv>
-                        <MotionUpDiv>
-                            <Button type="submit" name="send" className="mt-5 p-6 w-full md:text-xl" color="primary">إرسال</Button>
-                        </MotionUpDiv>
-                    </form>
-                </div>
-
-                <MotionUpDiv className="lg:w-1/2 max-w-xl flex flex-col items-center">
-                    <div className="h-8"/>
-                    <p>أو يمكنك التواصل معنا عبر منصاتنا الاجتماعية</p>
-                    <div className="flex flex-wrap justify-around gap-8 mt-8 px-4">
-                        {socialsContact.map(social => (
-                            <SourceIconLink key={social.name} src={social.src} link={social.link} alt={social.name} color={social.color} inSize={30} outSize={60}/>
-                        ))}
                     </div>
-                    <div className="h-8"/>
-                </MotionUpDiv>
+
+                    <MotionUpDiv className="lg:w-1/2 max-w-xl flex flex-col items-center space-y-12">
+                        <p>أو يمكنك التواصل معنا عبر منصاتنا الاجتماعية</p>
+                        <div className="flex flex-wrap justify-around gap-8 px-4">
+                            {socialsContact.map(social => (
+                                <SourceIconLink key={social.name} src={social.src} link={social.link} alt={social.name} color={social.color} inSize={30} outSize={60}/>
+                            ))}
+                        </div>
+                    </MotionUpDiv>
+                </div>
             </div>
 
+            <div className="h-10"/>
             <AppLineSep/>
             <div className="h-10"/>
         </section>
