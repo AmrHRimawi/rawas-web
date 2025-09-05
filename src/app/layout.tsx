@@ -38,6 +38,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <ClientProviders>
             <AppNavBar/>
             {children}
+            <div className="w-full h-28"/>
             <AppFooter/>
         </ClientProviders>
         
