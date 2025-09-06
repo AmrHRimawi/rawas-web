@@ -106,7 +106,7 @@ export default function AppNavBar() {
                                 href={item.link}
                                 size="lg"
                                 aria-current={isActive ? 'page' : undefined}
-                                onClick={() => setIsMenuOpen(false)}
+                                onPress={() => setIsMenuOpen(false)}
                             >
                                 {item.name}
                             </Link>

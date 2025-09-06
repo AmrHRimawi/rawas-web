@@ -344,7 +344,7 @@ export function generateSocialMetaTags(data: {
 }
 
 // Export all utilities
-export default {
+const SEOUtil = {
     calculateSEOScore,
     generateStructuredData,
     generateBreadcrumbs,
@@ -355,3 +355,5 @@ export default {
     optimizeDescription,
     generateSocialMetaTags
 };
+
+export default SEOUtil;

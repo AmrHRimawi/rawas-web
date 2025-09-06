@@ -63,7 +63,7 @@ export const appMetadata: Metadata = {
     description: description,
     keywords: enhancedKeywords,
     creator: "Amr Rimawi | email:Amr.hRimawi@gmail.com",
-    authors: [{ name: "Amr Rimawi", email: "Amr.hRimawi@gmail.com" }],
+    authors: [{ name: "Amr Rimawi" }],
     publisher: "رواس للاستثمار العقاري",
     category: "Real Estate",
     classification: "Business",
@@ -232,7 +232,6 @@ export const localBusinessJsonLd = {
     "priceRange": "$$",
     "paymentAccepted": ["Cash", "Bank Transfer", "Check"],
     "currenciesAccepted": ["ILS", "USD", "EUR"],
-    "areaServed": "PS",
     "availableLanguage": ["Arabic", "English"]
 };
 
@@ -409,7 +408,7 @@ export function createPageMetadata(
             title: fullTitle,
             description: pageDescription,
             url: fullUrl,
-            type: pageType,
+            type: pageType as "website" | "article",
             images: [
                 {
                     url: imageUrl,

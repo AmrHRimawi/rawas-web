@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 
 interface ImageOptimizationOptions {
     priority?: boolean;
@@ -152,36 +152,18 @@ export const useImageOptimization = (
     };
 };
 
-// Hook for managing multiple images
-export const useMultipleImageOptimization = (
+// Utility function for managing multiple images (not a hook)
+export const createMultipleImageOptimization = (
     imageSources: string[],
     options: ImageOptimizationOptions = {}
 ) => {
-    const [images, setImages] = useState<Map<string, ReturnType<typeof useImageOptimization>>>(new Map());
-
-    useEffect(() => {
-        const newImages = new Map();
-        
-        imageSources.forEach((src, index) => {
-            const imageHook = useImageOptimization(src, {
-                ...options,
-                priority: index < 3 // Priority for first 3 images
-            });
-            newImages.set(src, imageHook);
-        });
-
-        setImages(newImages);
-    }, [imageSources, options]);
-
-    const allLoaded = Array.from(images.values()).every(img => img.isLoaded);
-    const hasErrors = Array.from(images.values()).some(img => img.isError);
-    const totalLoadTime = Array.from(images.values()).reduce((sum, img) => sum + img.loadTime, 0);
-
-    return {
-        images,
-        allLoaded,
-        hasErrors,
-        totalLoadTime,
-        averageLoadTime: images.size > 0 ? totalLoadTime / images.size : 0
-    };
+    // This is a utility function, not a hook
+    // Components should call useImageOptimization individually for each image
+    return imageSources.map((src, index) => ({
+        src,
+        options: {
+            ...options,
+            priority: index < 3 // Priority for first 3 images
+        }
+    }));
 };

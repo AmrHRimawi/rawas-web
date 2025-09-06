@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useCallback} from "react";
 import Image from "next/image";
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import {Button} from "@nextui-org/react";
@@ -29,9 +29,9 @@ export default function ImageSlider({images, className, ...props}: Readonly<Imag
     };
 
     // Function to show the next slide
-    const nextSlide = (): void => {
+    const nextSlide = useCallback((): void => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
+    }, [images.length]);
 
     // useEffect hook to handle automatic slide transition
     useEffect(() => {
@@ -44,7 +44,7 @@ export default function ImageSlider({images, className, ...props}: Readonly<Imag
                 clearInterval(interval);
             };
         }
-    }, [isHovered]);
+    }, [isHovered, nextSlide]);
 
     // Handle mouse over event
     const handleMouseOver = (): void => {
@@ -73,13 +73,13 @@ export default function ImageSlider({images, className, ...props}: Readonly<Imag
             </div>
             <Button
                 className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-primary bg-opacity-80 text-primary-foreground rounded-full mx-2 w-20 h-20"
-                onClick={prevSlide}
+                onPress={prevSlide}
             >
                 <ChevronLeft className="text-gray-200 group-hover:text-primary-foreground" size={32}/>
             </Button>
             <Button
                 className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-primary bg-opacity-80 text-primary-foreground rounded-full mx-2 w-20 h-20"
-                onClick={nextSlide}
+                onPress={nextSlide}
             >
                 <ChevronRight className="text-gray-200 group-hover:text-primary-foreground" size={32}/>
             </Button>

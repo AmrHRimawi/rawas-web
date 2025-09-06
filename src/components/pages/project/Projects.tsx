@@ -24,7 +24,7 @@ export default function Projects() {
                 ))}
             </div>
 
-            <div className="h-24"/>
+            {/* <div className="h-12"/> */}
         </section>
     )
 }

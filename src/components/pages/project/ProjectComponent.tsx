@@ -12,6 +12,7 @@ import MotionEndDiv from "@/components/MotionEndDiv";
 import {pathPrefix} from "@/utils/Constent";
 import ImageGallery from "@/components/ImageGallery";
 import {Project} from "@/model/project/Project";
+import ScrollProgress from "@/components/ScrollProgress";
 
 interface ProjectProps {
     project: Project
@@ -22,6 +23,8 @@ export default function ProjectComponent({project}: Readonly<ProjectProps>) {
     const titlePrefix = project.name.substring(0, 1);
     const titleText = project.name.substring(1);
     return (
+        <>
+        <ScrollProgress />
         <section className="w-full p-1 md:p-6 lg:p-14">
 
             <MotionUpDiv><AppTitle text={titleText} prefix={titlePrefix}/></MotionUpDiv>
@@ -82,5 +85,6 @@ export default function ProjectComponent({project}: Readonly<ProjectProps>) {
             </div>
 
         </section>
+        </>
     )
 }

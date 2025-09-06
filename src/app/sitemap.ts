@@ -67,7 +67,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Blog pages (when implemented)
-  const blogPages = [
+  const blogPages: Array<{
+    url: string;
+    lastModified: Date;
+    changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+    priority: number;
+  }> = [
     // Add blog pages here when they are implemented
     // {
     //   url: `${baseUrlString}/blogs/news`,

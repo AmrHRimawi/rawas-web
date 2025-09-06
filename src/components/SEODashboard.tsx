@@ -27,8 +27,18 @@ const SEODashboard: React.FC<SEODashboardProps> = ({
                 title: document.title,
                 description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
                 keywords: document.querySelector('meta[name="keywords"]')?.getAttribute('content')?.split(', ') || [],
-                openGraph: document.querySelector('meta[property="og:title"]') ? true : false,
-                twitter: document.querySelector('meta[name="twitter:card"]') ? true : false
+                openGraph: document.querySelector('meta[property="og:title"]') ? {
+                    title: document.querySelector('meta[property="og:title"]')?.getAttribute('content') || '',
+                    description: document.querySelector('meta[property="og:description"]')?.getAttribute('content') || '',
+                    images: [{
+                        url: document.querySelector('meta[property="og:image"]')?.getAttribute('content') || ''
+                    }]
+                } : undefined,
+                twitter: document.querySelector('meta[name="twitter:card"]') ? {
+                    card: 'summary_large_image',
+                    title: document.querySelector('meta[name="twitter:title"]')?.getAttribute('content') || '',
+                    description: document.querySelector('meta[name="twitter:description"]')?.getAttribute('content') || ''
+                } : undefined
             };
             
             setSeoScore(calculateSEOScore(pageMetadata));
@@ -117,23 +127,23 @@ const SEODashboard: React.FC<SEODashboardProps> = ({
                 <h4 className="font-medium text-gray-700 text-sm mb-2">قائمة فحص SEO:</h4>
                 <div className="space-y-2 text-xs">
                     <div className="flex items-center space-x-2">
-                        <span className={`w-3 h-3 rounded-full ${seoScore?.score >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                        <span className={`w-3 h-3 rounded-full ${(seoScore?.score ?? 0) >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
                         <span>عنوان الصفحة</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <span className={`w-3 h-3 rounded-full ${seoScore?.score >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                        <span className={`w-3 h-3 rounded-full ${(seoScore?.score ?? 0) >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
                         <span>وصف الصفحة</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <span className={`w-3 h-3 rounded-full ${seoScore?.score >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                        <span className={`w-3 h-3 rounded-full ${(seoScore?.score ?? 0) >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
                         <span>الكلمات المفتاحية</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <span className={`w-3 h-3 rounded-full ${seoScore?.score >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                        <span className={`w-3 h-3 rounded-full ${(seoScore?.score ?? 0) >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
                         <span>Open Graph</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <span className={`w-3 h-3 rounded-full ${seoScore?.score >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                        <span className={`w-3 h-3 rounded-full ${(seoScore?.score ?? 0) >= 80 ? 'bg-green-500' : 'bg-red-500'}`}></span>
                         <span>Twitter Cards</span>
                     </div>
                 </div>
@@ -147,8 +157,18 @@ const SEODashboard: React.FC<SEODashboardProps> = ({
                             title: document.title,
                             description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
                             keywords: document.querySelector('meta[name="keywords"]')?.getAttribute('content')?.split(', ') || [],
-                            openGraph: document.querySelector('meta[property="og:title"]') ? true : false,
-                            twitter: document.querySelector('meta[name="twitter:card"]') ? true : false
+                            openGraph: document.querySelector('meta[property="og:title"]') ? {
+                                title: document.querySelector('meta[property="og:title"]')?.getAttribute('content') || '',
+                                description: document.querySelector('meta[property="og:description"]')?.getAttribute('content') || '',
+                                images: [{
+                                    url: document.querySelector('meta[property="og:image"]')?.getAttribute('content') || ''
+                                }]
+                            } : undefined,
+                            twitter: document.querySelector('meta[name="twitter:card"]') ? {
+                                card: 'summary_large_image',
+                                title: document.querySelector('meta[name="twitter:title"]')?.getAttribute('content') || '',
+                                description: document.querySelector('meta[name="twitter:description"]')?.getAttribute('content') || ''
+                            } : undefined
                         };
                         setSeoScore(calculateSEOScore(pageMetadata));
                     }
