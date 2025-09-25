@@ -1,8 +1,7 @@
 "use client";
 
 import React, {useState} from 'react';
-import {toast, ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import {toast} from 'react-toastify';
 import "./AboutUs.css"
 import AppTitle from "@/components/AppTitle";
 import {Button, Input, Link, Textarea} from "@nextui-org/react";
@@ -116,7 +115,6 @@ const ContactUs = () => {
     return (
         <section className="relative w-full p-6 lg:p-16">
             <div className="absolute inset-0 pointer-events-none"></div>
-            <ToastContainer position="top-left"/>
             <div className="relative z-10">
                 <div className="h-24"/>
                 <MotionUpDiv><AppTitle text="اصل معنا" prefix="تو"/></MotionUpDiv>

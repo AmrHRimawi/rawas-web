@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     // output: "export",
+    trailingSlash: true,
+    distDir: "out",
     // basePath: "/rawas-web",
     // assetPrefix: "/rawas-web/",
     

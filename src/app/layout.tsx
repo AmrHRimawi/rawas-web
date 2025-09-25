@@ -5,6 +5,8 @@ import AppNavBar from "@/components/AppNavBar";
 import AppFooter from "@/components/AppFooter";
 import {localBusinessJsonLd, organizationJsonLd, websiteJsonLd, appMetadata} from "@/utils/MetadataUtil";
 import ClientProviders from "@/components/ClientProviders";
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const font = Tajawal({subsets: ['arabic', 'latin'], weight: ['200', '300', '400', '500', '700', '800', '900']});
 
@@ -19,6 +21,20 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             {children}
             <div className="w-full h-28"/>
             <AppFooter/>
+            <ToastContainer 
+                position="top-left"
+                style={{ zIndex: 9999 }}
+                toastStyle={{ zIndex: 9999 }}
+                newestOnTop={true}
+                closeOnClick={true}
+                rtl={true}
+                pauseOnFocusLoss={false}
+                draggable={false}
+                pauseOnHover={true}
+                theme="light"
+                autoClose={5000}
+                hideProgressBar={false}
+            />
         </ClientProviders>
         
         {/* Inject structured data for SEO */}
