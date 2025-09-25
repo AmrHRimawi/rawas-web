@@ -8,9 +8,11 @@ interface TypeWriterListProps extends React.HTMLAttributes<HTMLDivElement> {
     erasingSpeed?: number;
     delay?: number;
     startDelay?: number;
+    showCaret?: boolean;
+    caretClassName?: string;
 }
 
-const TypeWriterList: React.FC<TypeWriterListProps> = ({strings = [], typingSpeed = 200, erasingSpeed = 50, delay = 1000, startDelay = 0, ...props}) => {
+const TypeWriterList: React.FC<TypeWriterListProps> = ({strings = [], typingSpeed = 200, erasingSpeed = 50, delay = 1000, startDelay = 0, showCaret = true, caretClassName = '', ...props}) => {
     const [displayedText, setDisplayedText] = useState('');
     const [index, setIndex] = useState(0);
     const [isErasing, setIsErasing] = useState(false);
@@ -54,7 +56,9 @@ const TypeWriterList: React.FC<TypeWriterListProps> = ({strings = [], typingSpee
     return (
         <div {...props}>
             {displayedText}
-            <span className="opacity-0">|</span>
+            {showCaret && (
+                <span className={`inline-block align-baseline ml-1 caret-blink ${caretClassName}`}>|</span>
+            )}
         </div>
     );
 };

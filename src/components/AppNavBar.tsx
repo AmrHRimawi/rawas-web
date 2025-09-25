@@ -6,6 +6,7 @@ import {AppLogo} from "@/components/AppLogo";
 import {usePathname} from "next/navigation";
 import {navLinks, pathPrefix, primary, socials} from "@/utils/Constent";
 import SourceIconLink from "@/components/SourceIconLink";
+import { cn } from "@/utils/TailwindUtil";
 
 const mainPath = `${pathPrefix}/`;
 export default function AppNavBar() {
@@ -22,7 +23,7 @@ export default function AppNavBar() {
             const handleScroll = () => {
                 setIsScrolled(window.scrollY > 200); // Adjust the threshold as needed
             };
-            window.addEventListener('scroll', handleScroll);
+            window.addEventListener('scroll', handleScroll, { passive: true });
             return () => {
                 window.removeEventListener('scroll', handleScroll);
             };
@@ -36,9 +37,13 @@ export default function AppNavBar() {
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={setIsMenuOpen}
             maxWidth="full"
-            className={isMain && !isScrolled ? "bg-opacity-0" : "bg-opacity-100"}
+            className={cn(
+                'sticky top-0 z-50 transition-all duration-300',
+                isMain && !isScrolled
+                    ? 'bg-transparent shadow-none'
+                    : 'bg-background/80 backdrop-blur-md backdrop-saturate-150 shadow-lg'
+            )}
             isBordered={!isMain || isScrolled}
-
         >
             <NavbarContent className="lg:hidden" justify="start">
                 <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"}/>
@@ -56,22 +61,24 @@ export default function AppNavBar() {
                 </NavbarBrand>
 
 
-                {navLinks.map((item, index) => {
+                {navLinks.map((item) => {
                     const isActive = (isMain && item.link === mainPath) || (item.link !== mainPath && path.startsWith(item.link));
                     return (
-                        <NavbarItem key={`${item.name}-${index}`} className="flex">
-                            <div className="w-4"/>
+                        <NavbarItem key={item.link} className="flex">
                             <Link
-                                className={"w-full "
-                                    + (isMain && !isScrolled ? " text-primary-foreground" : " text-primary")
-                                    + (isActive ? " border-b-2 border-secondary font-bold" : "")}
+                                className={cn(
+                                    'relative w-full inline-flex items-center px-1 py-2 transition-colors',
+                                    isMain && !isScrolled ? 'text-primary-foreground hover:text-secondary' : 'text-primary hover:text-secondary',
+                                    isActive && 'font-bold',
+                                    'after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-secondary after:transition-transform after:duration-300 hover:after:scale-x-100',
+                                    isActive && 'after:scale-x-100'
+                                )}
                                 href={item.link}
                                 size="lg"
-
+                                aria-current={isActive ? 'page' : undefined}
                             >
                                 {item.name}
                             </Link>
-
                         </NavbarItem>
                     )
                 })}
@@ -89,15 +96,17 @@ export default function AppNavBar() {
             </NavbarContent>
 
             <NavbarMenu>
-                {navLinks.map((item, index) => {
+                {navLinks.map((item) => {
                     const isActive = (isMain && item.link === mainPath) || (item.link !== mainPath && path.startsWith(item.link));
                     return (
-                        <NavbarMenuItem key={`${item.name}-${index}`}>
+                        <NavbarMenuItem key={item.link}>
                             <Link
-                                className={"w-full p-1 border-s-2" + (isActive ? " border-primary font-bold" : "")}
-                                color={isActive ? "primary" : "foreground"}
+                                className={cn('w-full p-1 border-s-2 transition-colors hover:text-secondary', isActive ? 'border-primary font-bold' : 'border-transparent')}
+                                color={isActive ? 'primary' : 'foreground'}
                                 href={item.link}
                                 size="lg"
+                                aria-current={isActive ? 'page' : undefined}
+                                onPress={() => setIsMenuOpen(false)}
                             >
                                 {item.name}
                             </Link>

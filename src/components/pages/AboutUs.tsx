@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import "./AboutUs.css";
 import AppTitle from "@/components/AppTitle";
@@ -7,6 +9,7 @@ import ArrowDown from "@/components/ArrowDown";
 import {AppLineSep} from "@/components/AppLineSep";
 import MotionUpDiv from "@/components/MotionUpDiv";
 import {pathPrefix} from "@/utils/Constent";
+import LazyImage from "@/components/LazyImage";
 
 export default function AboutUs() {
     const rawasWorkPillars = [
@@ -77,12 +80,26 @@ export default function AboutUs() {
                     <div className="min-h-72 h-fit">
                         <div className="flex justify-center mt-10 text-lg md:text-xl lg:text-2xl">
                             <MotionUpDiv className="flex flex-col items-center">
-                                <Image className="border-5 border-primary rounded-full" width={240} height={240} src={pathPrefix + "/images/eng-imad.png"} alt="iamd"/>
+                                <LazyImage 
+                                    className="border-5 border-primary rounded-full" 
+                                    width={240} 
+                                    height={240} 
+                                    src={pathPrefix + "/images/eng-imad.png"} 
+                                    alt="المهندس عماد الخطيب"
+                                    priority={true}
+                                />
                                 <div className="m-3">المهندس عماد الخطيب</div>
                             </MotionUpDiv>
                             <div className="w-10 h10"/>
                             <MotionUpDiv className="flex flex-col items-center">
-                                <Image className="border-5 border-primary rounded-full" width={240} height={240} src={pathPrefix + "/images/haj-hafes.png"} alt="iamd"/>
+                                <LazyImage 
+                                    className="border-5 border-primary rounded-full" 
+                                    width={240} 
+                                    height={240} 
+                                    src={pathPrefix + "/images/haj-hafes.png"} 
+                                    alt="الحاج عبد الحافظ الخطيب"
+                                    priority={true}
+                                />
                                 <div className="m-3">الحاج عبد الحافظ الخطيب</div>
                             </MotionUpDiv>
                         </div>

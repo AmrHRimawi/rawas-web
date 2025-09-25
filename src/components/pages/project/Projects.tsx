@@ -5,18 +5,26 @@ import {getLightProjects} from "@/model/project/ProjectData";
 import {ProjectCard} from "@/components/pages/project/ProjectCard";
 
 export default function Projects() {
+    const projects = getLightProjects();
+
     return (
-        <section className="w-full p-6 lg:p-16">
-            <div className="h-24"/>
-            <MotionUpDiv><AppTitle text="ـشاريعنا" prefix="مـ"/></MotionUpDiv>
+        <section className="w-full p-6 lg:p-16" aria-labelledby="projects-title">
+            <div className="h-4"/>
+
+            <MotionUpDiv><AppTitle id="projects-title" text="ـشاريعنا" prefix="مـ"/></MotionUpDiv>
             <div className="h-24"/>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
-                {getLightProjects().map(p => <ProjectCard key={p.id} project={p}/>)}
+                {projects.map((project, index) => (
+                    <ProjectCard
+                        key={project.id}
+                        project={project}
+                        priority={index < 2} // Priority loading for first 2 projects
+                    />
+                ))}
             </div>
 
-            <div className="h-24"/>
-
+            {/* <div className="h-12"/> */}
         </section>
     )
 }

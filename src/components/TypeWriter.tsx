@@ -2,7 +2,7 @@
 
 import React, {useEffect, useState} from 'react';
 
-const TypeWriter = ({children = "", speed = 200, startDelay = 0, ...props}) => {
+const TypeWriter = ({children = "", speed = 150, startDelay = 0, ...props}) => {
     const [displayedText, setDisplayedText] = useState('');
     const [index, setIndex] = useState(0);
     const [hasStarted, setHasStarted] = useState(false);

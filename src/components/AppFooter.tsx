@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {Link} from "@nextui-org/react";
 import {navLinks, pathPrefix, secondary, socials} from "@/utils/Constent";
@@ -5,93 +7,154 @@ import MotionEndDiv from "@/components/MotionEndDiv";
 import Image from "next/image";
 import SourceIconLink from "@/components/SourceIconLink";
 import SourceIconText from "@/components/SourceIconText";
+import { cn } from "@/utils/TailwindUtil";
 
 export default function AppFooter() {
-
-
     return (
-        <section className="w-full flex flex-col justify-between items-center lg:items-start lg:h-lvh">
-            <MotionEndDiv className=" px-12">
-                <div className="bg-primary-foreground p-5 translate-y-28 shadow-2xl border-t-2 rounded-full">
-                    <Image width={200} height={200} src={pathPrefix + "/images/rawas-logo.svg"} alt="Rawas"/>
-                </div>
-            </MotionEndDiv>
+        <footer className=" w-full bg-gradient-to-b from-primary to-primary/90 text-primary-foreground" role="contentinfo">
 
-            <div className="w-full flex flex-col justify-between items-center h-4/5 bg-primary text-primary-foreground px-12 pt-6">
-
-                <div className="flex flex-col justify-between items-center lg:items-start lg:flex-row text-xl text-primary-foreground">
-                    <div className="lg:w-4/12">
-                        <div className="h-32 "/>
-                        <MotionEndDiv className="font-light">
-                            نسعى لتكون رواس الخيار الأول في الاستثمار والامتلاك والتطوير العقاري في فلسطين، وأن تصبح الرائدة في
-                            استقطاب الطاقات البشرية الفلسطينية لتقدم أضخم منصة للتوعية في الاستثمار العقاري الفلسطيني
+            {/* Main Footer Content */}
+            <div className="flex flex-col justify-between items-center px-6 lg:px-12 pb-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-4 max-w-7xl mx-auto justify-center lg:items-end">
+                    {/* Company Info with Logo */}
+                    <div className="lg:justify-self-center space-y-6">
+                        {/* Logo positioned above company info */}
+                        <div className="flex justify-center lg:justify-start relative">
+                            <div className="h-24"/>
+                            <MotionEndDiv className="absolute -top-8">
+                                <Link 
+                                    href="/"
+                                    className="bg-primary-foreground p-5 -translate-y-28 shadow-2xl border-t-4 border-secondary rounded-full hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary block opacity-100 hover:opacity-100"
+                                    aria-label="العودة إلى الصفحة الرئيسية"
+                                >
+                                    <Image width={200} height={200} src={pathPrefix + "/images/rawas-logo.svg"} alt="رواس - شعار الشركة" priority={false} className="rounded-full"/>
+                                </Link>
+                            </MotionEndDiv>
+                        </div>
+                        <div className="h-8"/>
+                        {/* Company Info */}
+                        <MotionEndDiv>
+                            <p className="text-xl leading-relaxed text-primary-foreground/90">
+                                نسعى لتكون رواس الخيار الأول في الاستثمار والامتلاك والتطوير العقاري في فلسطين، وأن تصبح الرائدة في استقطاب الطاقات البشرية الفلسطينية لتقدم أضخم منصة للتوعية في الاستثمار العقاري الفلسطيني
+                            </p>
                         </MotionEndDiv>
-
-                        <div className="h-4"/>
-                        <MotionEndDiv className="text-secondary text-4xl  m-2 drop-shadow-xl adam-script-font">أينما حلّت.. حياة</MotionEndDiv>
-                        <div className="h-4"/>
-                        <MotionEndDiv className="flex justify-center lg:justify-start text-secondary">
-                            {
-                                socials().map(social => (
-                                    <SourceIconLink className="me-2" key={social.name} src={social.src} link={social.link} alt={social.name} color={secondary[300]}/>
-                                ))
-                            }
+                        
+                        <MotionEndDiv className="my-2">
+                            <p className="text-secondary text-3xl lg:text-4xl drop-shadow-xl adam-script-font">
+                                أينما حلّت.. حياة
+                            </p>
                         </MotionEndDiv>
-                    </div>
-
-                    <div className="h-12 lg:w-1/12"/>
-
-                    {/* important links section */}
-                    <div className="lg:w-2/12 flex flex-col gap-2">
-                        <div className="h-16"/>
-                        <MotionEndDiv><p className="text-2xl pb-3">روابط مهمة</p></MotionEndDiv>
-
-                        {navLinks.map((item, index) => (
-                            <div key={`${item.name}-${index}`} className="flex">
-                                <MotionEndDiv><Link className="text-primary-foreground" href={item.link}>
-                                    <SourceIconText src={pathPrefix + "/icons/left-angle.svg"} alt={item.name} size={12}>{item.name}</SourceIconText>
-                                </Link></MotionEndDiv>
+                        <MotionEndDiv>
+                            <div className="flex justify-center lg:justify-start gap-3">
+                                {socials().map(social => (
+                                    <SourceIconLink 
+                                        key={social.name} 
+                                        src={social.src} 
+                                        link={social.link} 
+                                        alt={social.name} 
+                                        color={secondary[300]}
+                                        title={`تواصل معنا عبر ${social.name}`}
+                                    />
+                                ))}
                             </div>
-                        ))}
+                        </MotionEndDiv>
                     </div>
 
-                    <div className="h-12 lg:w-1/12"/>
+                    {/* Navigation Links */}
+                    <div className="space-y-1 justify-self-center w-full lg:w-auto">
+                        <div className="h-12"/>
+                        <MotionEndDiv>
+                            <h3 className="text-2xl font-semibold text-secondary mb-4">روابط مهمة</h3>
+                        </MotionEndDiv>
+                        
+                        <nav aria-label="footer-navigation">
+                            <ul className="space-y-3">
+                                {navLinks.map((item) => (
+                                    <li key={item.link}>
+                                        <MotionEndDiv>
+                                            <Link 
+                                                className={cn(
+                                                    "text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 inline-flex items-center gap-2 group"
+                                                )} 
+                                                href={item.link}
+                                            >
+                                                <span className="w-6 h-6 text-secondary/60 group-hover:text-secondary transition-colors">
+                                                    <svg fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                                                    </svg>
+                                                </span>
+                                                {item.name}
+                                            </Link>
+                                        </MotionEndDiv>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                    </div>
 
-                    {/* contact us section */}
-                    <div className="lg:w-4/12 flex flex-col gap-2">
-                        <div className="h-16"/>
-                        <MotionEndDiv><p className="text-2xl pb-3">معلومات رواس</p></MotionEndDiv>
-                        <div className="flex flex-col justify-between items-start h-full gap-3">
+                    {/* Contact Info and opening hours*/}
+                    <div className="space-y-1 lg:justify-self-end">
+                        <div className="h-12"/>
+                        <MotionEndDiv>
+                            <h3 className="text-2xl font-semibold text-secondary mb-4">معلومات رواس</h3>
+                        </MotionEndDiv>
+                        
+                        {/* Contact Info */}
+                        <div className="space-y-4 text-start flex flex-col justify-start">
                             <MotionEndDiv>
-                                <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">0593330060</SourceIconText>
+                                <Link href="tel:0593330060" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 block text-start">
+                                    <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="هاتف" className="w-fit">0593330060</SourceIconText>
+                                </Link>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="phone">0593330066</SourceIconText>
+                                <Link href="tel:0593330066" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 block text-start">
+                                    <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="هاتف">0593330066</SourceIconText>
+                                </Link>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <SourceIconText src={pathPrefix + "/icons/rotary-telphone.svg"} alt="phone">022422766</SourceIconText>
+                                <Link href="tel:022422766" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 block text-start">
+                                    <SourceIconText src={pathPrefix + "/icons/rotary-telphone.svg"} alt="هاتف أرضي">022422766</SourceIconText>
+                                </Link>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <SourceIconText src={pathPrefix + "/icons/mail.svg"} alt="mail">info@rawas.ps</SourceIconText>
+                                <Link href="mailto:info@rawas.ps" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 block text-start">
+                                    <SourceIconText src={pathPrefix + "/icons/mail.svg"} alt="بريد إلكتروني">info@rawas.ps</SourceIconText>
+                                </Link>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <SourceIconText src={pathPrefix + "/icons/map-pin.svg"} alt="map pin">رام الله، البيرة، البالوع،عمارة اسطنبول،ط3</SourceIconText>
+                                <div className="text-lg text-primary-foreground/80 text-start">
+                                    <SourceIconText src={pathPrefix + "/icons/map-pin.svg"} alt="العنوان">رام الله، البيرة، البالوع،عمارة اسطنبول،ط3</SourceIconText>
+                                </div>
                             </MotionEndDiv>
-                            <div className="h-2"/>
-                            <MotionEndDiv><p className="text-2xl pb-3">أوقات الدوام</p></MotionEndDiv>
-                            <MotionEndDiv><p>السبت - الخميس (8:00ص -6:00م)</p></MotionEndDiv>
-                            <MotionEndDiv><p>الجمعة عطلة رسمية</p></MotionEndDiv>
+                        </div>
+                        
+                        <div className="h-10"/>
 
+                        {/* Opening hours */}
+                        <div className="space-y-3 pt-4 text-start">
+                            <MotionEndDiv>
+                                <h4 className="text-xl font-semibold text-secondary text-start">أوقات الدوام</h4>
+                            </MotionEndDiv>
+                            <MotionEndDiv>
+                                <p className="text-lg text-primary-foreground/80 text-start">السبت - الخميس (8:00ص -6:00م)</p>
+                            </MotionEndDiv>
+                            <MotionEndDiv>
+                                <p className="text-lg text-primary-foreground/80 text-start">الجمعة عطلة رسمية</p>
+                            </MotionEndDiv>
                         </div>
                     </div>
-
                 </div>
-                <div className="flex justify-start p-1 lg:p-3 w-full border-t-1 mt-4">
-                    <p>حقوق الطبع والنشر 2024 © جميع الحقوق محفوظة التصميم بواسطة رواس</p>
+                
+                {/* Copyright */}
+                <div className="w-full border-t border-primary-foreground/20 mt-12 pt-6">
+                    <MotionEndDiv>
+                        <p className="text-center lg:text-start text-primary-foreground/70 text-base">
+                            حقوق الطبع والنشر 2024 © جميع الحقوق محفوظة - التصميم بواسطة رواس
+                        </p>
+                    </MotionEndDiv>
                 </div>
             </div>
-
-        </section>
+        </footer>
     );
 
 }
