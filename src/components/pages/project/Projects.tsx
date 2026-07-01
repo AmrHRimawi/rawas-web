@@ -19,7 +19,7 @@ export default function Projects() {
                     <ProjectCard
                         key={project.id}
                         project={project}
-                        priority={index < 2} // Priority loading for first 2 projects
+                        priority={index < 3} // Priority loading for first 3 projects
                     />
                 ))}
             </div>
