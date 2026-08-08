@@ -37,7 +37,7 @@ const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({ onScrollToT
                 <Button
                     isIconOnly
                     className="glass-button backdrop-blur-md bg-white/30 hover:bg-white/40 text-white border border-white/40 hover:scale-110 transition-all duration-300 shadow-2xl fixed bottom-8 right-8 z-50 drop-shadow-2xl"
-                    onPress={onScrollToTop}
+                    onClick={onScrollToTop}
                     aria-label="Scroll to top"
                 >
                     <ChevronUpIcon className="text-2xl" />

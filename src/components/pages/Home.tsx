@@ -21,7 +21,7 @@ export default function Home() {
 
     return (<div className="relative">
         
-        <ScrollProgress />
+        <ScrollProgress />؛؛؛
         <ParticleBackground />
         <FloatingActionButton onScrollToTop={() => window.scrollTo({ top: 0, behavior: 'smooth'})} />
         

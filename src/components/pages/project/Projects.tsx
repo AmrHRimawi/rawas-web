@@ -8,10 +8,13 @@ export default function Projects() {
     const projects = getLightProjects();
 
     return (
-        <section className="w-full p-6 lg:p-16" aria-labelledby="projects-title">
-            <div className="h-4"/>
+        <section className="w-full p-6 lg:p-16">
+            <div className="h-24"/>
 
-            <MotionUpDiv><AppTitle id="projects-title" text="ـشاريعنا" prefix="مـ"/></MotionUpDiv>
+            <MotionUpDiv>
+                <AppTitle text="مشاريعنا" prefix=""/>
+            </MotionUpDiv>
+
             <div className="h-24"/>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
@@ -19,12 +22,12 @@ export default function Projects() {
                     <ProjectCard
                         key={project.id}
                         project={project}
-                        priority={index < 3} // Priority loading for first 3 projects
+                        priority={index < 3}
                     />
                 ))}
             </div>
 
-            {/* <div className="h-12"/> */}
+            <div className="h-24"/>
         </section>
-    )
+    );
 }

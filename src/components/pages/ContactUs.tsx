@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react';
 import {toast} from 'react-toastify';
-import "./AboutUs.css"
+import "./AboutUs.css";
 import AppTitle from "@/components/AppTitle";
 import {Button, Input, Link, Textarea} from "@nextui-org/react";
 import MotionUpDiv from "@/components/MotionUpDiv";

@@ -11,9 +11,14 @@ export type Project = {
     properties: { src: string; alt: string; title: string; text: string }[];
     about: string;
     lookImages: { title: string; src: string }[];
+    CertainImages:{ title: string; src: string}[];
     map: { src: string };
+    values?: ProjectValue[];
 };
-
+export interface ProjectValue {
+    title: string;
+    text: string;
+}
 export type ProjectLight = {
     id: number;
     name: string;

@@ -27,6 +27,7 @@
     "react-dom": "^18",
     "react-modal": "^3.16.1",
     "react-toastify": "^10.0.5",
+    "swiper": "^14.0.5",
     "three": "^0.168.0"
   },
   "devDependencies": {

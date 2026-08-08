@@ -1,30 +1,41 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-const ScrollProgress: React.FC = () => {
+export default function ScrollProgress() {
     const [scrollProgress, setScrollProgress] = useState(0);
 
     useEffect(() => {
-        const updateScrollProgress = () => {
+        const handleScroll = () => {
             const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (scrollTop / docHeight) * 100;
+
+            const documentHeight =
+                document.documentElement.scrollHeight -
+                document.documentElement.clientHeight;
+
+            const progress =
+                documentHeight > 0
+                    ? (scrollTop / documentHeight) * 100
+                    : 0;
+
             setScrollProgress(progress);
         };
 
-        window.addEventListener('scroll', updateScrollProgress);
-        return () => window.removeEventListener('scroll', updateScrollProgress);
+        window.addEventListener("scroll", handleScroll);
+
+        handleScroll();
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
     return (
-        <div className="fixed top-0 left-0 w-full h-1 bg-gray-200/20 z-50">
-            <div 
-                className="h-full bg-gradient-to-r from-secondary via-primary to-secondary transition-all duration-300 ease-out"
-                style={{ width: `${scrollProgress}%` }}
-            />
-        </div>
+        <div
+            className="fixed top-0 left-0 h-1 bg-secondary z-[9999] transition-[width] duration-100"
+            style={{
+                width: `${scrollProgress}%`,
+            }}
+        />
     );
-};
-
-export default ScrollProgress;
+}

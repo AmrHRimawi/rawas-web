@@ -67,7 +67,7 @@ export default function ImageSlider({images, className, ...props}: Readonly<Imag
                     src={images[currentIndex].src}
                     alt={`Slider Image ${currentIndex + 1}`}
                     fill
-                    style={{objectFit: "cover"}}
+                    style={{objectFit: "contain"}}
                     className="rounded-sm transition-all duration-1000 ease-in-out cursor-pointer"
                 />
             </div>

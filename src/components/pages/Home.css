@@ -34,9 +34,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.15) 60%, rgba(0, 0, 0, 0) 100%); /* Diagonal black gradient */
+    background-color: rgba(0, 0, 0, 0.2); /* Black filter with 20% opacity */
     z-index: 1;
-    pointer-events: none;
 }
 
 .header-section > * {
@@ -136,3 +135,16 @@ section {
     animation: caret-blink 1s steps(1, end) infinite;
     color: rgba(200, 178, 117, 0.95);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

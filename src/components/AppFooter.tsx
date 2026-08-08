@@ -96,7 +96,7 @@ export default function AppFooter() {
                     <div className="space-y-1 lg:justify-self-end">
                         <div className="h-12"/>
                         <MotionEndDiv>
-                            <h3 className="text-2xl font-semibold text-secondary mb-4">معلومات رواس</h3>
+                            <h3 className="text-2xl font-semibold text-secondary mb-4  ">معلومات رواس</h3>
                         </MotionEndDiv>
                         
                         {/* Contact Info */}
@@ -107,18 +107,18 @@ export default function AppFooter() {
                                 </Link>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <Link href="tel:0593330066" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 block text-start">
-                                    <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="هاتف">0593330066</SourceIconText>
+                                <Link href="tel:0593330061" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 block text-start">
+                                    <SourceIconText src={pathPrefix + "/icons/phone.svg"} alt="هاتف" className="w-fit">0593330061</SourceIconText>
                                 </Link>
                             </MotionEndDiv>
                             <MotionEndDiv>
-                                <Link href="tel:022422766" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 block text-start">
-                                    <SourceIconText src={pathPrefix + "/icons/rotary-telphone.svg"} alt="هاتف أرضي">022422766</SourceIconText>
+                                  <Link href="tel:022422766" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 block text-start">
+                                    <SourceIconText src={pathPrefix + "/icons/rotary-telphone.svg"} alt="هاتف أرضي" className="w-fit">022422766</SourceIconText>
                                 </Link>
                             </MotionEndDiv>
                             <MotionEndDiv>
                                 <Link href="mailto:info@rawas.ps" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors duration-200 block text-start">
-                                    <SourceIconText src={pathPrefix + "/icons/mail.svg"} alt="بريد إلكتروني">info@rawas.ps</SourceIconText>
+                                    <SourceIconText src={pathPrefix + "/icons/mail.svg"} alt="بريد إلكتروني" className="w-fit">info@rawas.ps</SourceIconText>
                                 </Link>
                             </MotionEndDiv>
                             <MotionEndDiv>
