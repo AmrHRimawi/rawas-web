@@ -118,7 +118,7 @@ export default function ProjectComponent({ project }: Readonly<ProjectProps>) {
                         <p className="text-xl lg:text-2xl"></p>
                         <div className="h-8" />
 
-                        <NormalImageGallery images={project.CertainImages} />
+                        <NormalImageGallery images={project.CurrentImages} />
                     </MotionUpDiv>
                     <p className="text-xl lg:text-2xl"></p>
 

@@ -11,7 +11,7 @@ export type Project = {
     properties: { src: string; alt: string; title: string; text: string }[];
     about: string;
     lookImages: { title: string; src: string }[];
-    CertainImages:{ title: string; src: string}[];
+    CurrentImages:{ title: string; src: string}[];
     map: { src: string };
     values?: ProjectValue[];
 };

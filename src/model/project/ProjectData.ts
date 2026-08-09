@@ -64,21 +64,21 @@ const projects: Record<number, Project> = {
             title: "",
             src: ``,
         }],
-         CertainImages: [{
+         CurrentImages: [{
             title: "",
-            src: `${pathPrefix}/images/projects/1/certain/1.jpg`,
+            src: `${pathPrefix}/images/projects/1/current/1.jpg`,
         }, {
             title: "",
-            src: `${pathPrefix}/images/projects/1/certain/2.jpg`,
+            src: `${pathPrefix}/images/projects/1/current/2.jpg`,
         }, {
             title: "",
-            src: `${pathPrefix}/images/projects/1/certain/3.jpg`,
+            src: `${pathPrefix}/images/projects/1/current/3.jpg`,
         }, {
             title: "",
-            src: `${pathPrefix}/images/projects/1/certain/4.jpg`,
+            src: `${pathPrefix}/images/projects/1/current/4.jpg`,
         }, {
             title: "",
-            src: `${pathPrefix}/images/projects/1/certain/5.jpg`,
+            src: `${pathPrefix}/images/projects/1/current/5.jpg`,
         }, ],
         map: {src: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1902.868659040583!2d35.20212806400692!3d31.912098375793555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDU0JzQzLjYiTiAzNcKwMTInMTAuNSJF!5e1!3m2!1sen!2suk!4v1724510930866!5m2!1sen!2suk"},
     },
@@ -144,7 +144,7 @@ const projects: Record<number, Project> = {
             
         },
     ],
-     CertainImages: [{
+     CurrentImages: [{
             title: "",
             src: ``,
         }, {
@@ -218,18 +218,18 @@ const projects: Record<number, Project> = {
             title: "مخطط الطابق الخامس",
             src: `${pathPrefix}/images/projects/3/view/5.png`,
         }],
-         CertainImages: [{
+         CurrentImages: [{
             title: "",
-            src: `${pathPrefix}/images/projects/3/certain/1.jpeg`,
+            src: `${pathPrefix}/images/projects/3/current/1.jpeg`,
         }, {
             title: "",
-            src: `${pathPrefix}/images/projects/3/certain/2.jpeg`,
+            src: `${pathPrefix}/images/projects/3/current/2.jpeg`,
         }, {
             title: "",
-            src: `${pathPrefix}/images/projects/3/certain/3.jpeg`,
+            src: `${pathPrefix}/images/projects/3/current/3.jpeg`,
         }, {
             title: "",
-            src: `${pathPrefix}/images/projects/3/certain/4.jpeg`,
+            src: `${pathPrefix}/images/projects/3/current/4.jpeg`,
         }, {
             title: "",
             src: ``,
