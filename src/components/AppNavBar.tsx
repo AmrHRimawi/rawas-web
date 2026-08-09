@@ -51,13 +51,17 @@ export default function AppNavBar() {
 
             <NavbarContent className="lg:hidden pr-3" justify="center">
                 <NavbarBrand>
-                    <Link href={navLinks[0].link}><AppLogo/></Link>
+                    <Link href={navLinks[0].link}>
+                        <AppLogo withBackdrop={isMain && !isScrolled}/>
+                    </Link>
                 </NavbarBrand>
             </NavbarContent>
 
             <NavbarContent className="hidden lg:flex gap-4" justify="center">
                 <NavbarBrand>
-                    <Link href={navLinks[0].link}><AppLogo/></Link>
+                    <Link href={navLinks[0].link}>
+                        <AppLogo withBackdrop={isMain && !isScrolled}/>
+                    </Link>
                 </NavbarBrand>
 
 

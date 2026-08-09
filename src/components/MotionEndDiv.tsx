@@ -17,7 +17,7 @@ const MotionEndDiv: React.FC<MotionDivProps> = ({children, className, viewportAm
         <motion.div
             initial={{opacity: 0, x: 50}}
             whileInView={{opacity: 1, x: 0}}
-            viewport={{amount: viewportAmount}}
+            viewport={{amount: viewportAmount, once: true}}
             transition={{duration: 1}}
             className={className}
             key={key}
