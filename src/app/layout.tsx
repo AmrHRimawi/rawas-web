@@ -19,7 +19,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <ClientProviders>
             <AppNavBar/>
             {children}
-            <div className="w-full h-28"/>
+            <div className="w-full h-36 md:h-28"/>
             <AppFooter/>
             <ToastContainer 
                 position="top-left"

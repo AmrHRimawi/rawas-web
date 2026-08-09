@@ -48,8 +48,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({project, priority = fal
                     </div>
                 </MotionUpDiv>
 
-                <MotionUpDiv className="w-full flex justify-center">
-                    <Button href={pathPrefix + project.link} as={Link} className="mt-5 p-6 lg:w-2/3 lg:text-xl" color="primary">
+                <MotionUpDiv className="mt-2 w-full flex justify-center">
+                    <Button href={pathPrefix + project.link} as={Link} className="p-6 lg:w-2/3 lg:text-xl" color="primary">
                         لمشاهدة التفاصيل
                     </Button>
                 </MotionUpDiv>

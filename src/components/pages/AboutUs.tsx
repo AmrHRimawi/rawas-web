@@ -250,7 +250,7 @@ export default function AboutUs() {
                                     className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background border-5 border-secondary rounded-full w-24 h-24 flex items-center justify-center">
                                     <p className="text-secondary text-4xl font-bold">{i + 1}</p>
                                 </div>
-                                <div className="text-center border-5 border-secondary rounded-6xl h-full min-h-120 px-8 pt-14 pb-2">
+                                <div className="text-center border-5 border-secondary rounded-6xl px-6 pt-14 pb-6 md:h-full md:min-h-120 md:px-8 md:pb-2">
                                     <p className="text-primary font-bold">{value.title}</p>
                                     <p className="text-primary mt-2">{value.text}</p>
                                 </div>

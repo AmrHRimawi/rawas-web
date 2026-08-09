@@ -108,7 +108,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none"></div>
             
             <div className="relative z-10 w-full">
-                <Projects/>
+                <Projects limit={2}/>
             </div>
             
             {/* Enhanced separator */}
